@@ -1,10 +1,8 @@
 'use client'
-import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image";
+
+import { useState } from "react"
 import AplicacionIcon from "@/components/menuButton/page";
-import Aos from "aos";
-import Animation from "../animation/page";
+
 
 
 export default function Navbar(){

@@ -35,6 +35,7 @@ const Welcome = () =>{
     
         if (speaking[array] === " Welcome.") {
           setWelcome(true);
+          console.log({welcomeTittle})
         }
         // Verifica que haya más elementos en speaking[array] para continuar la recursión
         if (key < speaking[array].length - 1) {
