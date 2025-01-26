@@ -1,0 +1,266 @@
+:root {
+  --retraso: 1s;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+    background-color:black;
+  }
+
+
+  
+  .contenedor {
+    width: 400px;
+    height: 400px;
+   
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    animation: container 27s alternate  infinite;
+    
+  }
+  
+  .circle {
+    background-color: #DC143C;
+    opacity: 0.80;
+     -webkit-box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    -moz-box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    animation: primera-animacion 3s  ;
+    
+  }
+
+  
+  
+  .circle2{
+    background-color: #F08080;
+    -webkit-box-shadow: 10px -15px 113px 0px rgba(240,128,128,1);
+    -moz-box-shadow: 10px -15px 113px 0px rgba(240,128,128,1);
+    box-shadow: 10px -15px 113px 0px rgba(240,128,128,1);
+    opacity: 0.80;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    animation: segunda-animacion 2s infinite alternate  ;
+    
+  }
+
+  .floorBall {
+    width: 1;
+    height: 1;
+  display: absolute;
+    border-radius: 20%;
+  }
+
+ 
+  
+  @media (min-width: 768px) {
+    .card{
+      view-timeline: --reveal;
+      animation: show;
+      animation-fill-mode: both ;
+      animation-timeline: --reveal;
+      animation-range: entry 25% cover 50% ;
+    }
+}
+
+
+  .floorBall li{
+    
+    border-radius: 20%;
+    background-color: #DC143C;
+    opacity: 0.80;
+     -webkit-box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    -moz-box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    box-shadow: 10px -15px 113px 0px rgba(220,20,60,1);
+    animation: cuadradoGirando 1s infinite linear ;
+   
+  }
+
+
+
+  .floorBall li:nth-child(1){
+    position: absolute;
+    left: 25%;
+    width: 40px;
+    height: 40px;
+    
+  }
+
+  .cuadrado{
+  
+  
+  width: 50px;
+    height: 50px;
+  animation: cuadrado  10s infinite ease   ;
+     
+}
+
+.floorBall div:nth-child(1){
+  
+  animation-delay: 10s;
+}
+.floorBall div:nth-child(2){
+  animation-delay: 7s;
+}
+.floorBall div:nth-child(3){
+  animation-delay: 6s;
+}
+.floorBall div:nth-child(4){
+  animation-delay: 13s;
+}
+.floorBall div:nth-child(5){
+  animation-delay: 1s;
+}
+.floorBall div:nth-child(6){
+  animation-delay: 4s;
+}
+.floorBall div:nth-child(7){
+  animation-delay: 9s;
+}
+.floorBall div:nth-child(8){
+  animation-delay: 2s;
+}
+.floorBall div:nth-child(9){
+  animation-delay: 3s;
+}
+
+.ScreenAnimation{
+
+  animation: screenAnimation 0.1s linear;
+  animation-iteration-count: 1;
+  transform-origin: right;
+}
+
+.ScreenAnimationReverse{
+
+  animation: screenAnimationReverse 0.1s linear;
+  animation-iteration-count: 1;
+  transform-origin: right;
+}
+
+@keyframes screenAnimation{
+
+  from{
+    transform: scaleX(0%);
+  }
+
+  to{
+    transform: scaleX(100%);
+  }
+
+}
+
+@keyframes screenAnimationReverse{
+
+  from{
+    transform: scaleX(100%);
+  }
+
+  to{
+    transform: scaleX(0%);
+  }
+
+}
+
+ @keyframes cuadradoGirando{
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(90deg);
+  }
+ }
+  
+
+
+@keyframes show {
+  from{
+    opacity: 0; scale: 10%;
+  }
+
+  to{
+    opacity: 1; scale: 100%;
+  }
+}
+
+@keyframes cuadrado{
+  0% {
+    transform: translateX(0);
+    
+  }
+  
+  1%{}
+
+  
+
+  100%{
+    transform: translate(100vw);
+    
+   
+    
+  }
+
+  
+
+}
+
+
+
+  
+  @keyframes container {
+    0%{
+      transform: rotate(0deg);
+    }
+    
+    100%{
+      transform: rotate(9000deg);
+    }
+    
+  }
+  
+  @keyframes segunda-animacion{
+    
+     0% {
+     
+      
+    }
+    
+    
+    
+    100%{
+      transform: translateX(-200px);
+    }
+  }
+  
+  @keyframes primera-animacion {
+    0% {
+     
+      
+    }
+    
+    100%{
+      transform: translateX(200px);
+      
+    }
+    
+    
+  
+    100% {
+      
+      
+     
+    }
+  }
+
+  
+  
+
+

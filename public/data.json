@@ -1,0 +1,78 @@
+[ { 
+      "nombre": "CSS",
+      "imagen": "css.svg",
+      "clasificacion": "Language"
+    },
+    { 
+      "nombre": "HTML",
+      "imagen": "html.svg",
+      "clasificacion": "Language"
+    },
+    { 
+      "nombre": "JavaScript",
+      "imagen": "js.svg",
+      "clasificacion": "Language"
+    },
+    {
+      "nombre":"Bootstrap",
+      "imagen": "bootstrap.svg",
+      "clasificacion": "Framework"
+    },
+    {
+      "nombre":"Tailwind.css",
+      "imagen":"tailwind.svg",
+      "clasificacion":"Framework"
+    },
+    {
+      "nombre":"Git",
+      "imagen":"github.svg",
+      "clasificacion":"Version control"
+    },
+    {
+      "nombre":"Express",
+      "imagen":"ex.svg",
+      "clasificacion":"Framework"
+    },
+    {
+      "nombre":"React",
+      "imagen":"react.svg",
+      "clasificacion":"Library"
+    },
+    {
+      "nombre":"React Native",
+      "imagen":"react-native.svg",
+      "clasificacion":"Library"
+    },
+    {
+      "nombre":"TypeScript",
+      "imagen":"ts.svg",
+      "clasificacion":"Language"
+    },
+    {
+      "nombre":"MySQL",
+      "imagen":"sql.svg",
+      "clasificacion":"Data Base"
+    },
+    {
+      "nombre":"PHP",
+      "imagen":"php.svg",
+      "clasificacion":"Language"
+    },
+    {"nombre":"Firebase",
+    "imagen":"fire.svg",
+    "clasificacion":"(PaaS)"},
+    {
+      "nombre":"Next.js",
+      "imagen":"nexts.webp",
+      "clasificacion":"Framework"
+    },
+    {
+      "nombre":"Redux Toolkit",
+      "imagen": "redux.webp",
+      "clasificacion":"Library"
+    }
+    
+
+   
+   
+]
