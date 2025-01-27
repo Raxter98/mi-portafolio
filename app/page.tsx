@@ -5,11 +5,13 @@ import Welcome from "@/components/welcome/page";
 import MyProjects from "@/components/myProjects/page";
 import Skills from "@/components/skills/page";
 import Contact from "@/components/contact/page";
+import Navbar from "@/components/nav/page";
 
 export default function Home() {
   
   return (
     <div className="md:flex md:flex-col md:items-center ">
+      <Navbar/>
       {/* Imagen de fondo */}
    
       {/* Contenido principal */}
