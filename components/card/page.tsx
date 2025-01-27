@@ -13,11 +13,11 @@ type contenido = {
 const Card = ({ titulo, imagen, texto, tecnologias, pais, video,setLinkVideo }: contenido) => {
   
   const display =(section: string)=>{
-    const aboutSection = document.getElementById(section);
+    /* const aboutSection = document.getElementById(section); */
     setLinkVideo(video)
-    if (aboutSection) {
+   /*  if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    } */
    
     
   }

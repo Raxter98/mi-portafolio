@@ -22,10 +22,10 @@ export default function Navbar(){
     }
 
 const scrollView= (section: string) =>{
-  const aboutSection = document.getElementById(section);
+/*   const aboutSection = document.getElementById(section);
   if (aboutSection) {
     aboutSection.scrollIntoView({ behavior: 'smooth' });
-  }
+  } */
 };
 
 
