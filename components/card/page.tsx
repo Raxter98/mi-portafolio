@@ -1,3 +1,5 @@
+
+
 type contenido = {
   titulo: string;
   imagen: string;
@@ -16,6 +18,7 @@ const Card = ({ titulo, imagen, texto, tecnologias, pais, video,setLinkVideo }: 
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
+   
     
   }
 
