@@ -1,4 +1,4 @@
-
+"use client";
 
 type contenido = {
   titulo: string;

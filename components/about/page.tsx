@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Ball from "../bootingBall/page";
 import Aos from "aos";

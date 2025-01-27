@@ -1,3 +1,4 @@
+"use client";
 import Tecnology from "@/components/tecnology/page";
 import data from "../../public/data.json";
 import "aos/dist/aos.css";

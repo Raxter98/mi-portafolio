@@ -1,5 +1,4 @@
-
-
+"use client";
 type atributos = {
   imagen: string;
   titulo: string;
