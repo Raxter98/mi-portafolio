@@ -1,11 +1,35 @@
 "use client";
-import Footer from "@/components/footer/page";
-import AboutMe from "@/components/about/page";
-import Welcome from "@/components/welcome/page";
-import MyProjects from "@/components/myProjects/page";
-import Skills from "@/components/skills/page";
-import Contact from "@/components/contact/page";
-import Navbar from "@/components/nav/page";
+
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import('@/components/footer/page'), {
+  ssr: false,
+});
+
+const AboutMe = dynamic(() => import('@/components/about/page'), {
+  ssr: false,
+});
+
+const Welcome = dynamic(() => import('@/components/welcome/page'), {
+  ssr: false,
+});
+
+const MyProjects = dynamic(() => import('@/components/myProjects/page'), {
+  ssr: false,
+});
+
+const  Skills = dynamic(() => import('@/components/skills/page'), {
+  ssr: false,
+});
+
+const Contact = dynamic(() => import('@/components/contact/page'), {
+  ssr: false,
+});
+
+const Navbar = dynamic(() => import('@/components/nav/page'), {
+  ssr: false,
+});
+
 
 export default function Home() {
   
