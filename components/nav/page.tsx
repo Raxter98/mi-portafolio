@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AplicacionIcon from "@/components/menuButton/page";
 
 
@@ -21,12 +21,14 @@ export default function Navbar(){
 
     }
 
-const scrollView= (section: string) =>{
-/*   const aboutSection = document.getElementById(section);
-  if (aboutSection) {
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
-  } */
-};
+    const scrollView = (section: string) => {
+      
+        const aboutSection = document.getElementById(section);
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+   
+    };
 
 
     return (
