@@ -35,10 +35,12 @@ export default function Home() {
   
   return (
     <div className="md:flex md:flex-col md:items-center ">
-      <Navbar/>
-      {/* Imagen de fondo */}
+      
+      <div> <p>hola mundo</p></div>
+      {/* <Navbar/>
+     
    
-      {/* Contenido principal */}
+     
         <div id="home"></div>
 
 
@@ -49,20 +51,20 @@ export default function Home() {
 
   
         <div id="about"></div>
-      {/* Sección about me */}
+    
     
         
         <div  className="md:w-[968] md: mt-28">
           <AboutMe/>
         </div>
 
-      {/* Sección my projects */}
+     
 <div className="md:w-[968] ">
 
         <MyProjects/>
 </div>
 
-  {/* Sección Aboutme */}
+
 
   <div id="skills" >
 
@@ -77,7 +79,7 @@ export default function Home() {
       <Contact/>
 </div>
 
-<Footer /> 
+<Footer />  */}
     </div>
   );
 }
