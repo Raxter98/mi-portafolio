@@ -68,11 +68,13 @@ export default function Home() {
   <div id="skills" >
 
         </div>
+
+       */} 
 <div className="md:w-[968] ">
 
         <Skills/>
 </div>
-*/}
+
 <div className="md:w-[968] ">
 
       <Contact/>
