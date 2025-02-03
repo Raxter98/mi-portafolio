@@ -38,12 +38,12 @@ export default function Home() {
      
  <Navbar/>
      
-   {/*  
+
      
         <div id="home"></div>
 
 
-   */} 
+   
         <div className="md:w-[600] ">
 
           <Welcome/>
