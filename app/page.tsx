@@ -35,11 +35,10 @@ export default function Home() {
   
   return (
     <div className="md:flex md:flex-col md:items-center ">
-      
-      <div> <p>hola mundo</p></div>
-      {/* <Navbar/>
      
-   
+ <Navbar/>
+     
+   {/*  
      
         <div id="home"></div>
 
