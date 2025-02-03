@@ -43,12 +43,12 @@ export default function Home() {
         <div id="home"></div>
 
 
+   */} 
         <div className="md:w-[600] ">
 
           <Welcome/>
         </div>
 
-   */} 
         <div id="about"></div>
     
     
