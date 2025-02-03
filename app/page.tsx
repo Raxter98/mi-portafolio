@@ -77,8 +77,8 @@ export default function Home() {
 
       <Contact/>
 </div>
-
-<Footer />  */}
+*/}
+<Footer />  
     </div>
   );
 }
