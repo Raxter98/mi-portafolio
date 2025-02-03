@@ -72,12 +72,12 @@ export default function Home() {
 
         <Skills/>
 </div>
-
+*/}
 <div className="md:w-[968] ">
 
       <Contact/>
 </div>
-*/}
+
 <Footer />  
     </div>
   );
