@@ -57,14 +57,14 @@ export default function Home() {
           <AboutMe/>
         </div>
 
-     
+     */} 
 <div className="md:w-[968] ">
 
         <MyProjects/>
 </div>
 
 
- */} 
+ 
   <div id="skills" >
 
         </div>
