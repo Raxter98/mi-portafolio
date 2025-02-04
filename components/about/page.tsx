@@ -19,7 +19,7 @@ const AboutMe = () => {
 
       <section className=" md:flex   w-full  justify-center">
         <div className="mb-9 md:mb-0 md:ml-16 flex flex-col items-center  md:block   md:w-1/3">
-          <h2 className=" text-4xl md:mb-11 md:text-5xl from-white to-black">
+          <h2 className=" text-4xl md:mb-11 md:text-5xl text-white">
             About me
           </h2>
 
@@ -35,13 +35,13 @@ const AboutMe = () => {
           <div className="block md:hidden">
             <a href="/cv.pdf" download="cv.pdf">
               <button className="bg-red-500 opacity-45 p-3 mt-4 rounded-md hover:opacity-100 transition ease-in-out delay-150">
-                Download CV ↴
+                <p className="text-white">Download CV ↴</p>
               </button>
             </a>
           </div>
         </div>
         <div className="md:w-[700px] md:mt-10  flex flex-col">
-          <p className="text-xl z-10 font-[family-name:var(--font-geist-sans)]  md:mr-6">
+          <p className="text-white text-xl z-10 font-[family-name:var(--font-geist-sans)]  md:mr-6">
             <span className=" md:text-3xl">Full Stack Developer</span>
             <br />
             <br />
@@ -72,7 +72,7 @@ const AboutMe = () => {
           <div className="hidden md:block">
             <a href="/cv.pdf" download="cv.pdf">
               <button className="bg-red-500 opacity-45 p-3 mt-4 rounded-md hover:opacity-100 transition ease-in-out delay-150">
-                Download CV ↴
+                <p className="text-white">Download CV ↴</p>
               </button>
             </a>
           </div>
