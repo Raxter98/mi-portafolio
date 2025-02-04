@@ -51,7 +51,7 @@ const MyProjects = () => {
 
   return (
     <div id="projects" className="w-full  mt-36 text-center" data-aos="zoom-out">
-      <h2 className=" text-4xl md:mb-11 from-white to-black md:text-5xl ">
+      <h2 className=" text-4xl md:mb-11 text-white md:text-5xl ">
         My projects
       </h2>
       <section
