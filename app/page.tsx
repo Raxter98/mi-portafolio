@@ -44,7 +44,7 @@ export default function Home() {
 
 
    
-        <div className="md:w-[600] ">
+        <div className="md:w-[601px] ">
 
           <Welcome/>
         </div>
@@ -53,12 +53,12 @@ export default function Home() {
     
     
         
-        <div  className="md:w-[968] md: mt-28">
+        <div  className="md:w-[968px] md: mt-28">
           <AboutMe/>
         </div>
 
     
-<div className="md:w-[968] ">
+<div className="md:w-[968px] ">
 
         <MyProjects/>
 </div>
@@ -70,12 +70,12 @@ export default function Home() {
         </div>
 
       
-<div className="md:w-[968] ">
+<div className="md:w-[968px] ">
 
         <Skills/>
 </div>
 
-<div className="md:w-[968] ">
+<div className="md:w-[968px] ">
 
       <Contact/>
 </div>

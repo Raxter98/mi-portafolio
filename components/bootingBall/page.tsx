@@ -4,7 +4,7 @@ const Ball = () =>{
 
 
     return(
-        <ul className="floorBall">
+        <ul className="floorBall absolute">
              <div className="cuadrado z-0">
               <li ></li>
             

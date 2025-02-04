@@ -51,7 +51,7 @@ const MyProjects = () => {
 
   return (
     <div id="projects" className="w-full  mt-36 text-center" data-aos="zoom-out">
-      <h2 className="text-4xl md:mb-11 from-white to-black md:text-5xl ">
+      <h2 className=" text-4xl md:mb-11 from-white to-black md:text-5xl ">
         My projects
       </h2>
       <section
@@ -59,18 +59,18 @@ const MyProjects = () => {
         className="relative md:flex justify-center gap-8 items-center sm:items-start z-10 "
       >
         {/* Pantalla de reproduccion */}
-        <div className=" md:w-2/4 md:h-[600] item-center md:items-end flex flex-col ">
+        <div className=" md:w-2/4 md:h-[600px] item-center md:items-end flex flex-col ">
       
-          <div className="mt-5 md:mt-20 h-[400]    md:w-[400] flex  md:rounded-l-xl items-center" ref={animationRef} >
+          <div className="mt-5 md:mt-20 h-[400px]    md:w-[400px] flex  md:rounded-l-xl items-center" ref={animationRef} >
                  {linkVideo && <button onClick={closing} className="bg-white animate-pulse    z-40 transform active:scale-75 transition-transform  rounded-l-lg"><p className="text-2xl  text-black     transform active:scale-75 transition-transform mb-1"> →</p></button> }
-                  <video ref={videoRef} autoPlay muted loop className="h-[300] md:h-[400]">
+                  <video ref={videoRef} autoPlay muted loop className="h-[300px] md:h-[400px]">
                      {linkVideo && <source src={linkVideo} />}
                   </video>
             </div>
         </div>
         
         {/* Pantalla de cartas */}
-        <div className="flex-col flex items-center mt-20 md:mt-0  md:w-2/4 md:h-[600] overflow-y-scroll md:scroll">
+        <div className="flex-col flex items-center mt-20 md:mt-0  md:w-2/4 md:h-[600px] overflow-y-scroll md:scroll">
             
             
             {/* Animación */}
