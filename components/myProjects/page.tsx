@@ -110,7 +110,7 @@ const MyProjects = () => {
 
 <Card
             titulo ={"Worldker"}
-            imagen={"/arzobispado.webp"}
+            imagen={"/worldker.png"}
             texto={"Android application to search for work and offer services. Pre-Alpha stage"}
             tecnologias={["React-Native", "Firebase","i18n","MySQL","Git","+3"]}
             pais={"Chile"}

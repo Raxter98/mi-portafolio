@@ -10,7 +10,7 @@ const Skills = () => {
     Aos.init({ duration: 1000, delay: 100, mirror: true, offset: 500 });
   }, []);
   return (
-    <div className="mt-40 " data-aos="fade-up">
+    <div className="mt-40 mb-10" data-aos="fade-up">
       <section
        
         className=" md:relative md:flex md:flex-col gap-8 md:items-center  z-10"
