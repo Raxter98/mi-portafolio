@@ -14,10 +14,15 @@ const MyProjects = () => {
 
   const closing = ()=>{
     if(animationRef.current){
+      animationRef.current.classList.remove('block') 
+      animationRef.current.classList.add('absolute')
       animationRef.current.classList.add('ScreenAnimationReverse') 
       animationRef.current.classList.remove('ScreenAnimation') 
+      
         setTimeout(()=>{
           if(animationRef.current){
+            animationRef.current.classList.remove('block') 
+      animationRef.current.classList.add('absolute')
           animationRef.current.classList.add('hidden') 
           /* videoRef.current= null; de esta forma ya no aparece el recuadro de imagen en imagen, pero me tira un error*/
           setLinkVideo("")}
@@ -29,11 +34,26 @@ const MyProjects = () => {
 
   useEffect(()=>{
     if (videoRef.current) {
+      
+      if(animationRef.current && linkVideo){
+       
+        animationRef.current.classList.remove('absolute') 
+        animationRef.current.classList.add('block')
+      }
+      
+      
       videoRef.current.load(); // Recarga el video
+      
       if(animationRef.current){
+        
         animationRef.current.classList.remove('hidden') 
         animationRef.current.classList.remove('ScreenAnimationReverse') 
         animationRef.current.classList.add('ScreenAnimation')
+        
+       
+          
+        
+
         setTimeout(()=>{
           if(animationRef.current){
           animationRef.current.classList.remove('ScreenAnimation') }
@@ -61,9 +81,9 @@ const MyProjects = () => {
         {/* Pantalla de reproduccion */}
         <div className=" md:w-2/4 md:h-[600px] item-center md:items-end flex flex-col ">
       
-          <div className="mt-5 md:mt-20 h-[400px]    md:w-[400px] flex  md:rounded-l-xl items-center" ref={animationRef} >
-                 {linkVideo && <button onClick={closing} className="bg-white animate-pulse    z-40 transform active:scale-75 transition-transform  rounded-l-lg"><p className="text-2xl  text-black     transform active:scale-75 transition-transform mb-1"> →</p></button> }
-                  <video ref={videoRef} autoPlay muted loop className="h-[300px] md:h-[400px]">
+          <div className="absolute mt-5 md:mt-20    md:w-[400px] flex  md:rounded-l-xl items-center" ref={animationRef} >
+                 {linkVideo && <button onClick={closing} className=" bg-white animate-pulse    z-40 transform active:scale-75 transition-transform  rounded-l-lg"><p className="text-2xl  text-black     transform active:scale-75 transition-transform mb-1"> →</p></button> }
+                  <video ref={videoRef} autoPlay muted loop className="max-h-96">
                      {linkVideo && <source src={linkVideo} />}
                   </video>
             </div>

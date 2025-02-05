@@ -16,7 +16,7 @@ const Skills = () => {
         className=" md:relative md:flex md:flex-col gap-8 md:items-center  z-10"
       >
         <div className="text-center w-full">
-          <h2 className="text-4xl md:text-5xl text-white">My skills</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-10">My skills</h2>
         </div>
 
         <div className="flex flex-wrap justify-center">

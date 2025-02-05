@@ -34,7 +34,7 @@ export default function Navbar(){
     return (
       <div >
         {toggle ? (
-          <div className="mt-10 md:mt-5 z-50 fixed md:inline-flex  md:h-16 md:justify-center md:p-4 md:items-center  md:bg-[#00000005] md:rounded-lg md:shadow-lg md:shadow-red-500/50">
+          <div className=" md:mt-5 z-50 fixed md:inline-flex  md:h-16 md:justify-center md:p-4 md:items-center  md:bg-[#00000005] md:rounded-lg md:shadow-lg md:shadow-red-500/50">
             <ul>
             <li className="md:hidden ">
               <div className="md:hidden  text-white hover:text-[#1a1a1a] ml-2">
@@ -84,7 +84,7 @@ export default function Navbar(){
             </ul>
           </div>
         ) : (
-            <div className="mt-10 md:mt-5 z-50 fixed md:inline-flex  md:h-16 md:justify-center md:p-4 md:items-center  md:bg-[#00000005] md:rounded-lg md:shadow-lg md:shadow-red-500/50">
+            <div className=" md:mt-5 z-50 fixed md:inline-flex  md:h-16 md:justify-center md:p-4 md:items-center  md:bg-[#00000005] md:rounded-lg md:shadow-lg md:shadow-red-500/50">
             <div className="md:hidden  text-white hover:text-[#1a1a1a] ml-2">
               <button className="md:hidden " onClick={() => hidden()}>
                 <AplicacionIcon />
