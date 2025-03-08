@@ -75,10 +75,10 @@ const Welcome = () =>{
 return (
   <main
     
-    className=" relative flex  md:mt-52 mt-20   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
+    className=" relative   md:mt-52 mt-20   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
-     <div className="w-24 h-24 ">
+     <div className="w-20 h-10 flex justify-between">
         <a href="https://www.linkedin.com/in/marcos-valero-50800525a/" ><Image className="hover:w-7  transition-all duration-500" src={"/linkedin.png"} alt={"linkedin"} width={24} height={24} /></a>
         <br />
         <a href="https://github.com/Raxter98"><Image className="hover:w-7 transition-all duration-500" src={"/github.png"} alt={"github"} width={24} height={24} /></a>
