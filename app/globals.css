@@ -3,34 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-@font-face {
-  font-family: 'shikamaru';
-  src: url('/fonts/shikamaru.otf') format('opentype'),
-  url('/fonts/shikamaru.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  --background-light: white; /* Color de fondo en modo claro */
+  --foreground-light: black; /* Color de texto en modo claro */
+  --background-dark: black;  /* Color de fondo en modo oscuro */
+  --foreground-dark: white;  /* Color de texto en modo oscuro */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+  font-family: 'DefaultFont', sans-serif;
   overflow-x: hidden;
-  
-  
-  
+  transition: background-color 0.3s, color 0.3s; /* Transición suave entre colores */
 }
+
+.text-custom {
+  font-family: var(--font-default);
+  font-weight: 600; /* Semi-bold */
+}
+
+
 
 html {
   scroll-behavior: smooth;
