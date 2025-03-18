@@ -75,7 +75,7 @@ const Welcome = () =>{
 return (
   <main
     
-    className=" relative   md:mt-52 mt-20   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
+    className=" relative   md:mt-52 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
      <div className="w-20 h-10 flex justify-between">
