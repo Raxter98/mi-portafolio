@@ -1,7 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Programing from "@/components/programing/page";
+
+
+const Programing = dynamic(() => import('@/components/programing/page'), {
+  ssr: false,
+});
 
 const Footer = dynamic(() => import('@/components/footer/page'), {
   ssr: false,
