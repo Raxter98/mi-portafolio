@@ -27,7 +27,7 @@ const Programing = () => {
   return (
     <div
       ref={animationContainer}
-      className="w-64  opacity-100 transition duration-300 z-50 delay-100 ease-in-out"
+      className="w-full max-w-[800px]  mx-auto my-auto bg-transparent absolue  opacity-100 transition duration-300 z-2 delay-100 ease-in-out"
     ></div>
   );
 };

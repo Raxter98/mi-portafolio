@@ -120,7 +120,12 @@ export default function Navbar(){
           
       
 
-          <div className="md:hidden m-4 flex z-20">
+          
+
+
+        <div className="md:hidden flex justify-between  h-10 z-50 bg-white dark:bg-black text-black  dark:text-white m-4 w-full">
+        
+        <div className="md:hidden m-4  z-20">
 
 <img
   alt=""
@@ -132,8 +137,6 @@ export default function Navbar(){
 </div>
 
 
-        <div className="md:hidden flex justify-evenly  h-10 z-50 bg-white dark:bg-black text-black  dark:text-white m-4">
-        
           <div className=" z-20 text-black  dark:text-white   hover:text-[#1a1a1a]">
             <button className="" onClick={() => hidden()}>
 

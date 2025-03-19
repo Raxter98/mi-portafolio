@@ -94,7 +94,7 @@ return (
       
       <h1
         className={
-          "text-5xl    md:text-7xl text-transparent bg-clip-text text-white animate-pulse"
+          "text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse"
         }
       >
         {render}

@@ -48,19 +48,22 @@ export default function Home() {
         <div id="home"></div>
 
 
-   
-        <div className="md:w-full flex justify-center">
+   /** justify-center  items-end*/ */
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-rows-1   mx-10">
 
           
-          <div className="md:w-[601px]">
+          <div className="">
           <Welcome/>
 
-            <p className="text-custom mt-3">Having accumulated over four years of experience in designing, developing, and maintaining websites, online systems, and mobile applications, I have worked with a wide range of technologies. My versatility has enabled me to tackle projects across various platforms and environments, always striving to provide high-quality and high-performance solutions.</p>
+            <p className="text-custom mt-3">Having accumulated over four years of experience in designing, developing, and maintaining websites, online systems, and mobile applications, I have worked with a wide range of technologies. My versatility has enabled me to tackle projects across various platforms and environments, always striving to provide high-quality and high-performance solutions</p>
           </div>
           
-          <div className="md:w-[601px]">
+          <div className=" hidden md:block md:mt-64 lg:mt-32 xl:mt-16 2xl:mt-8  ">
 
+          <div className="rounded-full shadow-lg shadow-red-500">
+            
           <Programing/>
+          </div>
           </div>
 
         </div>
