@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Programing from "@/components/programing/page";
 
 const Footer = dynamic(() => import('@/components/footer/page'), {
   ssr: false,
@@ -44,9 +45,20 @@ export default function Home() {
 
 
    
-        <div className="md:w-[601px] ">
+        <div className="md:w-full flex justify-center">
 
+          
+          <div className="md:w-[601px]">
           <Welcome/>
+
+            <p className="text-custom mt-3">Having accumulated over four years of experience in designing, developing, and maintaining websites, online systems, and mobile applications, I have worked with a wide range of technologies. My versatility has enabled me to tackle projects across various platforms and environments, always striving to provide high-quality and high-performance solutions.</p>
+          </div>
+          
+          <div className="md:w-[601px]">
+
+          <Programing/>
+          </div>
+
         </div>
 
         <div id="about"></div>

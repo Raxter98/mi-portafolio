@@ -2,9 +2,9 @@
 import lottie, { AnimationItem } from "lottie-web";
 import { useRef, useEffect } from "react";
 
-const Scroll = () => {
+const Programing = () => {
   const animationContainer = useRef<HTMLDivElement | null>(null);
-  const animationInstance = useRef<AnimationItem | null>(null); // 🔹 Instancia propia
+  const animationInstance = useRef<AnimationItem | null>(null); // 🔹 Guarda la instancia de esta animación
 
   useEffect(() => {
     if (animationContainer.current) {
@@ -13,13 +13,13 @@ const Scroll = () => {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        path: "/scroll.json",
+        path: "/programing.json",
       });
     }
 
     return () => {
       if (animationInstance.current) {
-        animationInstance.current.destroy(); // 🔹 Solo destruye esta animación
+        animationInstance.current.destroy(); // 🔹 Solo destruye ESTA animación
       }
     };
   }, []);
@@ -27,9 +27,9 @@ const Scroll = () => {
   return (
     <div
       ref={animationContainer}
-      className="w-10 h-10 absolute transition delay-100 ease-in-out"
+      className="w-64  opacity-100 transition duration-300 z-50 delay-100 ease-in-out"
     ></div>
   );
 };
 
-export default Scroll;
+export default Programing;
