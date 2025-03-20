@@ -42,7 +42,7 @@ const Welcome = () =>{
         if (key < speaking[array].length - 1) {
           setTimeout(() => {
             welcome(key + 1, array); // Avanza al siguiente elemento dentro del mismo array
-          }, 500);
+          }, 150);
         } else {
           // Si llegaste al final del array actual y este es el último array, detente
           if (array === speaking.length - 1) {
@@ -75,7 +75,7 @@ const Welcome = () =>{
 return (
   <main
     
-    className="overflow-hidden relative   md:mt-52 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
+    className="overflow-hidden relative   md:mt-44 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
      <div className="w-full h-10 flex justify-between items-end mb-3">
@@ -111,10 +111,10 @@ return (
       >
         {render.split(" ").map((word, index) => (
     <span key={index} className="border-b-4 border-red-500 mr-2">{word}</span>
-  ))}<p className="opacity-0 animate-pulse text-5xl    md:text-7xl">|</p>
+  ))}<p className="opacity-0 animate-[pulse_1s_infinite] text-5xl    md:text-7xl">|</p>
       </h1>
     </section>
-      <p className="border-b-4 border-red-500 inline-block text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse">Developer</p>
+      <p className=" inline-block text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse">Developer</p>
   </main>
 );
 

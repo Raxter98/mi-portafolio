@@ -20,7 +20,7 @@ useEffect(()=>{
         Aos.init({ duration: 1000, delay: 100,offset: 100, mirror:true, once:false });
       }, 500);
   
-  }, 23000)
+  }, 14000)
 
 },[])
 
