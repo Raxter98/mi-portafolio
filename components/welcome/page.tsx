@@ -7,7 +7,7 @@ const Welcome = () =>{
         "Software",
         " Web",
         " Mobile",
-        " Full Stack |",
+        " Full Stack",
       ];
       const [render, setRender] = useState("");
       const [welcomeTittle, setWelcome] = useState(false);
@@ -42,17 +42,17 @@ const Welcome = () =>{
         if (key < speaking[array].length - 1) {
           setTimeout(() => {
             welcome(key + 1, array); // Avanza al siguiente elemento dentro del mismo array
-          }, 150);
+          }, 500);
         } else {
           // Si llegaste al final del array actual y este es el último array, detente
           if (array === speaking.length - 1) {
             const interval = setInterval(() => {
               setRender((prev) => {
-                if (prev.endsWith("|")) {
-                  return prev.substring(0, prev.length - 1);
+                if (prev.endsWith(".")) {
+                  return prev
                 } else {
                   // Si no, añadimos un punto
-                  return prev + "|";
+                  return prev + ".";
                 }
               });
             }, 3000);
@@ -106,12 +106,15 @@ return (
     <section className="   md:flex">
       <h1
         className={
-          " text-5xl    md:text-7xl 2xl:text-9xl bg-clip-text text-black dark:text-white animate-pulse"
+          " flex flex-wrap text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse "
         }
       >
-        {render} <p className="border-b-4 border-red-500 inline-block">Developer.</p>
+        {render.split(" ").map((word, index) => (
+    <span key={index} className="border-b-4 border-red-500 mr-2">{word}</span>
+  ))}<p className="opacity-0 animate-pulse text-5xl    md:text-7xl">|</p>
       </h1>
     </section>
+      <p className="border-b-4 border-red-500 inline-block text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse">Developer</p>
   </main>
 );
 
