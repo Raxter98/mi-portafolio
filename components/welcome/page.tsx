@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const Welcome = () =>{
     const speaking = [
-        "A journey through my creative process.",
-        " Creative solutions for your projects.",
-        " Creating unique digital experiences.",
-        " Hi, I'm Marcos — a Web & Mobile Developer.",
+        "Software",
+        " Web",
+        " Mobile",
+        " Full Stack |",
       ];
       const [render, setRender] = useState("");
       const [welcomeTittle, setWelcome] = useState(false);
@@ -48,11 +48,11 @@ const Welcome = () =>{
           if (array === speaking.length - 1) {
             const interval = setInterval(() => {
               setRender((prev) => {
-                if (prev.endsWith(".")) {
+                if (prev.endsWith("|")) {
                   return prev.substring(0, prev.length - 1);
                 } else {
                   // Si no, añadimos un punto
-                  return prev + ".";
+                  return prev + "|";
                 }
               });
             }, 3000);
@@ -78,26 +78,38 @@ return (
     className="overflow-hidden relative   md:mt-52 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
-     <div className="w-20 h-10 flex justify-between ">
+     <div className="w-full h-10 flex justify-between items-end mb-3">
+        
+        <div className="flex gap-2">
         <a href="https://www.linkedin.com/in/marcos-valero-50800525a/" ><Image className="hover:w-7  transition-all duration-500 bg-black rounded-md" src={"/linkedin.png"} alt={"linkedin"} width={24} height={24} /></a>
         <br />
         <a href="https://github.com/Raxter98"><Image className="hover:w-7 transition-all duration-500 bg-black rounded-full" src={"/github.png"} alt={"github"} width={24} height={24} /></a>
+
+        </div>
        
+        
+            <a href="/cv.pdf" download="cv.pdf" className="mr-16">
+              <button className="bg-red-500 opacity-45 p-1 px-3 rounded-md hover:opacity-100 transition ease-in-out delay-150">
+                <p className="text-white">Download CV ↴</p>
+              </button>
+            </a>
+        
+
       </div>
       
    
      
 
       
-
+    <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Hi,</p>
+    <p className="text-2xl md:text-3xl lg:text-4xl mb-2">My name is <span className="bg-red-500 p-1">Marcos Valero</span></p>
     <section className="   md:flex">
-      
       <h1
         className={
-          "text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse"
+          " text-5xl    md:text-7xl 2xl:text-9xl bg-clip-text text-black dark:text-white animate-pulse"
         }
       >
-        {render}
+        {render} <p className="border-b-4 border-red-500 inline-block">Developer.</p>
       </h1>
     </section>
   </main>

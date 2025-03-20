@@ -59,7 +59,8 @@ export default function Home() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-rows-1   mx-10">
 
           
-          <div className="">
+          <div>
+            
           <Welcome/>
             
             <Subtitle/>
