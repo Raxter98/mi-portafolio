@@ -75,13 +75,13 @@ const Welcome = () =>{
 return (
   <main
     
-    className=" relative   md:mt-52 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
+    className="overflow-hidden relative   md:mt-52 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
-     <div className="w-20 h-10 flex justify-between">
-        <a href="https://www.linkedin.com/in/marcos-valero-50800525a/" ><Image className="hover:w-7  transition-all duration-500" src={"/linkedin.png"} alt={"linkedin"} width={24} height={24} /></a>
+     <div className="w-20 h-10 flex justify-between ">
+        <a href="https://www.linkedin.com/in/marcos-valero-50800525a/" ><Image className="hover:w-7  transition-all duration-500 bg-black rounded-md" src={"/linkedin.png"} alt={"linkedin"} width={24} height={24} /></a>
         <br />
-        <a href="https://github.com/Raxter98"><Image className="hover:w-7 transition-all duration-500" src={"/github.png"} alt={"github"} width={24} height={24} /></a>
+        <a href="https://github.com/Raxter98"><Image className="hover:w-7 transition-all duration-500 bg-black rounded-full" src={"/github.png"} alt={"github"} width={24} height={24} /></a>
        
       </div>
       
