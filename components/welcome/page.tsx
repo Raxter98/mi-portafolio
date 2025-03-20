@@ -78,7 +78,7 @@ return (
     className="overflow-hidden relative   md:mt-44 mt-32   items-center sm:items-start z-10 overflow-x-hidden " // La animación desaparece en dispositivos moviles porque el overflo-hidden esta activado
   >
 
-     <div className="w-full h-10 flex justify-between items-end mb-3">
+     <div className="w-full h-10 flex md:justify-between items-end mb-3">
         
         <div className="flex gap-2">
         <a href="https://www.linkedin.com/in/marcos-valero-50800525a/" ><Image className="hover:w-7  transition-all duration-500 bg-black rounded-md" src={"/linkedin.png"} alt={"linkedin"} width={24} height={24} /></a>
@@ -88,9 +88,9 @@ return (
         </div>
        
         
-            <a href="/cv.pdf" download="cv.pdf" className="mr-16">
-              <button className="bg-red-500 opacity-45 p-1 px-3 rounded-md hover:opacity-100 transition ease-in-out delay-150">
-                <p className="text-white">Download CV ↴</p>
+            <a href="/cv.pdf" download="cv.pdf" className="ml-2 md:ml-0 md:mr-16">
+              <button className=" bg-red-500 opacity-45 p-1 px-3 rounded-md hover:opacity-100 transition ease-in-out delay-150">
+                <p className="text-white text-xs">Download CV ↴</p>
               </button>
             </a>
         
