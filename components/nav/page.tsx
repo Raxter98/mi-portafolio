@@ -80,7 +80,7 @@ export default function Navbar(){
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("about")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      About me
+                      Experience
                     </span>
                   </button>
                 </li>

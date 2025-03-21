@@ -68,21 +68,27 @@ export default function Home() {
           
           <div className=" hidden md:block md:mt-64 lg:mt-32 xl:mt-16 2xl:mt-8  ">
 
-          <div className="rounded-full shadow-lg shadow-red-500">
+          <div  className="rounded-full shadow-lg shadow-red-500">
             
           <Programing/>
           </div>
           </div>
 
+        <div id="about"></div>
         </div>
 
-        <div id="about"></div>
-    
-    
-        
-        <div  className="md:w-[968px] md: mt-28">
-          <AboutMe/>
-        </div>
+      <div className="text-start w-full  mt-36">
+
+        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">COMPANIES IN WHICH HAVE</span>  </h1>
+
+        <h1 className=" mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
+      </div>
+
+
+
+      <div className="md:w-[968px] md: mt-28">
+        <AboutMe />
+      </div>
 
     
 <div className="md:w-[968px] ">
