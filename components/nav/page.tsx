@@ -158,7 +158,7 @@ export default function Navbar(){
             <li className=" text-black  dark:text-white transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("about")}>
                 <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  About me
+                Experience
                 </span>
               </button>
             </li>
