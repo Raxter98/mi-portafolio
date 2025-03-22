@@ -36,7 +36,7 @@ const Logos = ({ image }: Propiedades) => {
     <div
       ref={ref}
       className={`transition-opacity duration-500 transform ${
-        isVisible ? "animate-fade-left animate-delay-150" : "opacity-0 translate-x-10"
+        isVisible ? "z-20 animate-fade-left animate-delay-150" : "opacity-0 translate-x-10"
       }`}
     >
       <Image src={image} alt="Logo" width={300} height={300} />
