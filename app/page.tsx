@@ -10,6 +10,8 @@ const Companies =dynamic(()=> import("@/components/companies/page"), {ssr: false
 
 const Tags =dynamic(()=> import("@/components/tags/page"), {ssr: false})
 
+const TagsTwo =dynamic(()=> import("@/components/tagsTwo/page"), {ssr: false})
+
 const Subtitle = dynamic(()=> import("@/components/subtittle/page"), {ssr:false})
 
 const Programing = dynamic(() => import('@/components/programing/page'), {
@@ -63,7 +65,7 @@ export default function Home() {
 
 
    /** justify-center  items-end*/ */
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-rows-1   mx-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-rows-1   md:mx-10">
 
           
           <div>
@@ -88,13 +90,13 @@ export default function Home() {
 
       <div className="text-start w-full  mt-36">
 
-        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">COMPANIES IN WHICH HAVE</span>  </h1>
+        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">COMPANIES IN WHICH HAVE</span>  </h1>
 
-        <h1 className=" mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
+        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
       </div>
 
 
-      <div className="grid grid-cols-2 grid-rows-2 mt-20 ml-10">
+      <div className="grid grid-cols-1 Usa auto-rows-auto md:grid-cols-2 md:grid-rows-2 mt-20 md:ml-10">
 
 
         <div>
@@ -110,18 +112,47 @@ export default function Home() {
           
         <Tags/>
 
+        <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
+
+        </div>
+
+
+        <div className="flex flex-col mt-10 md:mt-0 md:justify-center items-center">
+          <Logos
+          image={"/logo_arzobispado.svg"}
+          />
+          
+          <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 md:hidden block mb-4"></div>
+
         </div>
 
 
         <div>
-          <Logos
-          image={"/logo_arzobispado.svg"}
+          <Companies
+            position={"Junior"}
+            enterprise={"Freelancer"}
+            date={"2020 (January) - 2022 (February)"}
+            description={"As a junior freelance developer, I designed and optimized web solutions for entrepreneurs and startups using technologies like React.js, Python, Node.js, and MongoDB, focusing on building efficient and scalable interfaces. I developed static sites with HTML/CSS and JavaScript, enhancing SEO and performance, and managed server logic while collaborating on applications such as a task manager, learning to troubleshoot real-time errors and communicate technical requirements clearly to clients. Every project, from e-commerce platforms to basic APIs, strengthened my adaptability and ability to deliver results with modern tools, even under tight deadlines and unexpected technical challenges."}
           />
-          <h1 className="ml-10">Aqui va la imagen</h1>
 
+          
+
+          
+        <TagsTwo/>
+
+       
 
         </div>
 
+
+        <div className="flex flex-col mt-10 md:mt-0 md:justify-center items-center">
+          <Logos
+          image={"/freelance.png"}
+          />
+          
+         
+
+        </div>
 
       </div>
      
