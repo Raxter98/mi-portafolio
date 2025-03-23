@@ -98,6 +98,13 @@ export default function Navbar(){
                     </span>
                   </button>
                 </li>
+                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50md:p-1 p-1">
+                  <button onClick={() => scrollView("education")}>
+                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
+                      Education
+                    </span>
+                  </button>
+                </li>
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("contact")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
@@ -173,6 +180,13 @@ export default function Navbar(){
               <button onClick={() => scrollViewMobile("skills")}>
                 <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
                   Skills
+                </span>
+              </button>
+            </li>
+            <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
+              <button onClick={() => scrollViewMobile("education")}>
+                <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
+                  Education
                 </span>
               </button>
             </li>

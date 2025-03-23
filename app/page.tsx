@@ -4,6 +4,11 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+
+const Education =dynamic(()=> import("@/components/Education/page"), {ssr: false})
+
+const Projects =dynamic(()=> import("@/components/projects/page"), {ssr: false})
+
 const Logos =dynamic(()=> import("@/components/logos/page"), {ssr: false})
 
 const Companies =dynamic(()=> import("@/components/companies/page"), {ssr: false})
@@ -164,11 +169,12 @@ export default function Home() {
         <div className="hidden md:block absolute top-0 right-0  h-3/4 bg-red-500 z-10 rounded-b-2xl w-4  mr-10">
 
 </div>
-        <div className="hidden md:block  absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full">
+        <div  className="hidden md:block  absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full">
 
         </div>
           <Logos
           image={"/freelance.png"}
+          
           />
           
          
@@ -177,12 +183,53 @@ export default function Home() {
 
       </div>
      
-
+<div id="projects"></div>
     
-<div className="md:w-[968px] ">
+      <div className="text-start w-full  mt-36 mb-6">
 
-        <MyProjects/>
+        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">PROJECTS IN WHICH I HAVE</span>  </h1>
+
+        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
+      </div>
+
+     
+      <div className="relative grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4 w-full max-w-6xl  min-h-[600px]">
+  {/* Proyecto grande a la izquierda, ocupa dos filas */}
+  <div className="row-span-2 z-10">
+  <div className="h-full md:ml-10">
+    <Projects
+      enterpriseName="Freelancer"
+      appName="Worldker mobile App"
+      imageUrl="/worldker.png"
+    />
+  </div>
+  </div>
+
+  {/* Primer proyecto a la derecha */}
+  <div className="h-full md:mr-10 z-10">
+    <Projects
+      enterpriseName="Archdiocese of La Serena"
+      appName="Website"
+      imageUrl="/arzobispado.webp"
+    />
+  </div>
+
+  {/* Segundo proyecto a la derecha */}
+  <div className="h-full md:mr-10 z-10">
+    <Projects
+      enterpriseName="Archdiocese of La Serena"
+      appName="CRUD System"
+      imageUrl="/crud.webp"
+    />
+  </div>
+
+  <div className=" right-0 -bottom-16 left-0 z-5 hidden md:flex absolute items-center justify-center">
+						<div className="bg-gray-300/40 dark:bg-gray-600/40 rounded-3xl h-[150px] w-[700px] flex items-end justify-center pb-5 animate-pulse">
+							<div className="bg-red-500 rounded-xl h-[15px] w-[50%] flex items-center justify-center"></div>
+						</div>
+					</div>
 </div>
+
 
 
  
@@ -191,15 +238,24 @@ export default function Home() {
         </div>
 
       
-<div className="md:w-[968px] ">
+        
+<div className="mx-10 mt-36">
 
         <Skills/>
+        
 </div>
 
-<div className="md:w-[968px] ">
+<div id="education"></div>
 
+
+<Education/>
+
+
+<div id="contact" >
+
+</div>
       <Contact/>
-</div>
+
 
 <Footer />  
     </div>
