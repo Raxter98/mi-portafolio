@@ -54,8 +54,16 @@
         "text": "I updated and created a new website for the Archbishopric of La Serena along with an internal business system to create, read, update and delete various sections of the site including news for the institution's journalistic department."
       },
       "worldker": {
-        "title": "Worldker",
-        "text": "Android application to search for work and offer services. Pre-Alpha stage"
+        "title": "Worldker Mobile App",
+        "text": "An innovative on-demand mobile application designed to seamlessly connect professionals with service seekers. Built from the ground up, featuring real-time matching and a responsive UI/UX."
+      },
+      "arzobispadoWeb": {
+        "title": "Archdiocese of La Serena",
+        "text": "A comprehensive institutional website developed to provide news, resources, and transparent information to the community, featuring a highly accessible and responsive design."
+      },
+      "arzobispadoCrud": {
+        "title": "Archdiocese Management System",
+        "text": "A bespoke internal CRUD (Create, Read, Update, Delete) system engineered to securely manage the institution's digital content, including journalistic articles and event scheduling."
       },
       "alcaldia": {
         "title": "Town Hall Medellin",

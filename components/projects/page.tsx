@@ -31,12 +31,12 @@ useEffect(() => {
 
       {/* Información (Aparece en Hover) */}
       <div
-        className={`absolute top-4 left-4 bg-red-500 bg-opacity-80 text-white p-3 rounded-md transition-opacity duration-300 ${
-          hovered ? "opacity-100" : "opacity-0"
+        className={`absolute bottom-6 left-6 right-6 backdrop-blur-md bg-red-900/60 border border-red-500/30 text-white p-5 rounded-2xl shadow-xl shadow-red-900/20 transform transition-all duration-300 ${
+          hovered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
       >
-        <h3 className="text-lg font-semibold">{enterpriseName}</h3>
-        <p className="text-sm">{appName}</p>
+        <h3 className="text-xl font-bold mb-1">{enterpriseName}</h3>
+        <p className="text-sm text-gray-100 leading-relaxed">{appName}</p>
       </div>
     </div>
   );

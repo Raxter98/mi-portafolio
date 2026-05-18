@@ -198,8 +198,8 @@ export default function Home() {
   <div className="row-span-2 z-10">
   <div className="h-full md:ml-10">
     <Projects
-      enterpriseName="Freelancer"
-      appName="Worldker mobile App"
+      enterpriseName={t.projects.items.worldker.title}
+      appName={t.projects.items.worldker.text}
       imageUrl="/worldker.png"
     />
   </div>
@@ -208,8 +208,8 @@ export default function Home() {
   {/* Primer proyecto a la derecha */}
   <div className="h-full md:mr-10 z-10">
     <Projects
-      enterpriseName="Archdiocese of La Serena"
-      appName="Website"
+      enterpriseName={t.projects.items.arzobispadoWeb.title}
+      appName={t.projects.items.arzobispadoWeb.text}
       imageUrl="/arzobispado.webp"
     />
   </div>
@@ -217,8 +217,8 @@ export default function Home() {
   {/* Segundo proyecto a la derecha */}
   <div className="h-full md:mr-10 z-10">
     <Projects
-      enterpriseName="Archdiocese of La Serena"
-      appName="CRUD System"
+      enterpriseName={t.projects.items.arzobispadoCrud.title}
+      appName={t.projects.items.arzobispadoCrud.text}
       imageUrl="/crud.webp"
     />
   </div>

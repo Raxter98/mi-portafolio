@@ -54,8 +54,16 @@
         "text": "Actualicé y creé un nuevo sitio web para el Arzobispado de La Serena junto con un sistema interno de la empresa para crear, leer, actualizar y eliminar diversas secciones del sitio, incluidas noticias para el departamento periodístico de la institución."
       },
       "worldker": {
-        "title": "Worldker",
-        "text": "Aplicación de Android para buscar trabajo y ofrecer servicios. Etapa Pre-Alpha."
+        "title": "Aplicación Móvil Worldker",
+        "text": "Una innovadora aplicación móvil diseñada para conectar profesionales con clientes en tiempo real. Desarrollada desde cero, cuenta con un sistema de emparejamiento dinámico y una interfaz de usuario altamente responsiva."
+      },
+      "arzobispadoWeb": {
+        "title": "Arzobispado de La Serena",
+        "text": "Un sitio web institucional integral desarrollado para brindar noticias, recursos e información transparente a la comunidad, con un diseño altamente accesible y responsivo."
+      },
+      "arzobispadoCrud": {
+        "title": "Sistema de Gestión del Arzobispado",
+        "text": "Un sistema interno CRUD a medida diseñado para gestionar de forma segura y eficiente el contenido digital de la institución, incluyendo artículos periodísticos y programación de eventos."
       },
       "alcaldia": {
         "title": "Alcaldía de Medellín",
