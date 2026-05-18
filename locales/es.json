@@ -41,6 +41,12 @@
         "enterprise": "Freelancer",
         "date": "2020 (Enero) - 2022 (Febrero)",
         "description": "Como desarrollador junior independiente, diseñé y optimicé soluciones web para emprendedores y startups utilizando tecnologías como React.js, Python, Node.js y MongoDB, enfocándome en construir interfaces eficientes y escalables. Desarrollé sitios estáticos con HTML/CSS y JavaScript, mejorando el SEO y el rendimiento, y gestioné la lógica del servidor colaborando en aplicaciones como un administrador de tareas, aprendiendo a solucionar errores en tiempo real y comunicar requerimientos técnicos claramente a los clientes. Cada proyecto fortaleció mi adaptabilidad y capacidad para entregar resultados con herramientas modernas, incluso bajo plazos ajustados y desafíos técnicos inesperados."
+      },
+      "midlevel": {
+        "position": "Mid-level Developer",
+        "enterprise": "Independiente / Freelance",
+        "date": "2022 - presente",
+        "description": "Como desarrollador mid-level, asumí proyectos más complejos y desafiantes, liderando la arquitectura técnica y asegurando las mejores prácticas en el desarrollo web y móvil moderno. Me enfoqué en construir aplicaciones escalables, de alto rendimiento y centradas en el usuario, aprovechando mis habilidades avanzadas en todo el stack para ofrecer soluciones robustas para diversos clientes."
       }
     }
   },

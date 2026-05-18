@@ -181,6 +181,37 @@ export default function Home() {
 
         </div>
 
+        <div>
+          <Companies
+            position={t.companies.jobs.midlevel.position}
+            enterprise={t.companies.jobs.midlevel.enterprise}
+            date={t.companies.jobs.midlevel.date}
+            description={t.companies.jobs.midlevel.description}
+          />
+
+        <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
+
+        </div>
+
+
+        <div className="relative  flex flex-col mt-10 md:mt-0 md:justify-center items-center">
+         
+        
+        <div className="hidden md:block absolute top-0 right-0  h-3/4 bg-red-500 z-10 rounded-b-2xl w-4  mr-10">
+
+</div>
+        <div  className="hidden md:block  absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full">
+
+        </div>
+          <Logos
+          image={"/freelance.png"}
+          
+          />
+          
+         
+
+        </div>
+
       </div>
      
 <div id="projects"></div>
