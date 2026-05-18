@@ -56,6 +56,30 @@
       "worldker": {
         "title": "Worldker",
         "text": "Aplicación de Android para buscar trabajo y ofrecer servicios. Etapa Pre-Alpha."
+      },
+      "alcaldia": {
+        "title": "Alcaldía de Medellín",
+        "text": "Sitio web dedicado a gestionar y organizar eventos culturales en Medellín, con roles personalizados para jurados y candidatos, optimizando todo el proceso del evento."
+      },
+      "autovidrios": {
+        "title": "Auto Vidrios Pueblo Nuevo",
+        "text": "Sistema de gestión web integral creado para controlar citas, realizar seguimiento de inventario y ejecutar auditorías para empleados, clientes y administradores."
+      },
+      "fiado": {
+        "title": "Fiado",
+        "text": "Aplicación Web Progresiva (PWA) que facilita las transferencias de dinero seguras entre roles personalizados y contactos internos asignados."
+      },
+      "jccrp": {
+        "title": "Distribuciones J.C.C.R.P.c.a.",
+        "text": "Sistema web local desarrollado para el control robusto de inventario y la designación precisa de rutas para la entrega de productos."
+      },
+      "perfecttrainer": {
+        "title": "Perfect Trainer",
+        "text": "Aplicación móvil diseñada para entrenadores personales, que ofrece rutinas de ejercicios predefinidas o personalizadas para satisfacer las necesidades específicas de sus clientes."
+      },
+      "tourtrack": {
+        "title": "TourTrack",
+        "text": "Aplicación móvil nativa que permite a las agencias asignar nuevos tours turísticos en todo el mundo mientras gestionan de manera eficiente su red de contactos internos."
       }
     }
   },

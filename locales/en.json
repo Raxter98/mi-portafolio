@@ -56,6 +56,30 @@
       "worldker": {
         "title": "Worldker",
         "text": "Android application to search for work and offer services. Pre-Alpha stage"
+      },
+      "alcaldia": {
+        "title": "Town Hall Medellin",
+        "text": "A dedicated website designed to manage and organize cultural events in Medellin, featuring tailored roles for jurors and candidates to streamline the entire event process."
+      },
+      "autovidrios": {
+        "title": "Auto Vidrios Pueblo Nuevo",
+        "text": "A comprehensive web-based management system built to control appointments, track inventory, and conduct audits for employees, clients, and managers."
+      },
+      "fiado": {
+        "title": "Fiado",
+        "text": "A Progressive Web App (PWA) facilitating seamless money transfers between customized roles and managed internal contacts."
+      },
+      "jccrp": {
+        "title": "Distribuciones J.C.C.R.P.c.a.",
+        "text": "A local web system developed for robust inventory control and the precise designation of delivery routes for products."
+      },
+      "perfecttrainer": {
+        "title": "Perfect Trainer",
+        "text": "A mobile application tailored for personal trainers, offering predefined or personalized exercise routines tailored to meet the specific needs of their clients."
+      },
+      "tourtrack": {
+        "title": "TourTrack",
+        "text": "A native mobile application that allows agencies to assign new tourist tours globally while efficiently managing their internal contact network."
       }
     }
   },

@@ -223,6 +223,54 @@ export default function Home() {
     />
   </div>
 
+  <div className="h-full md:ml-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.alcaldia.title}
+      appName={t.projects.items.alcaldia.text}
+      imageUrl="/projects/Alcaldia.webp"
+    />
+  </div>
+
+  <div className="h-full md:mr-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.autovidrios.title}
+      appName={t.projects.items.autovidrios.text}
+      imageUrl="/projects/AutoVidrios.webp"
+    />
+  </div>
+
+  <div className="h-full md:ml-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.fiado.title}
+      appName={t.projects.items.fiado.text}
+      imageUrl="/projects/Fiado.webp"
+    />
+  </div>
+
+  <div className="h-full md:mr-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.jccrp.title}
+      appName={t.projects.items.jccrp.text}
+      imageUrl="/projects/Jccrp.webp"
+    />
+  </div>
+
+  <div className="h-full md:ml-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.perfecttrainer.title}
+      appName={t.projects.items.perfecttrainer.text}
+      imageUrl="/projects/perfecttrainer.webp"
+    />
+  </div>
+
+  <div className="h-full md:mr-10 z-10 min-h-[300px]">
+    <Projects
+      enterpriseName={t.projects.items.tourtrack.title}
+      appName={t.projects.items.tourtrack.text}
+      imageUrl="/projects/TourTrack.webp"
+    />
+  </div>
+
   <div className=" right-0 -bottom-16 left-0 z-5 hidden md:flex absolute items-center justify-center">
 						<div className="bg-gray-300/40 dark:bg-gray-600/40 rounded-3xl h-[150px] w-[700px] flex items-end justify-center pb-5 animate-pulse">
 							<div className="bg-red-500 rounded-xl h-[15px] w-[50%] flex items-center justify-center"></div>
