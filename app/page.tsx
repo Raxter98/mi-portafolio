@@ -104,83 +104,7 @@ export default function Home() {
       <div className="grid grid-cols-1 Usa auto-rows-auto md:grid-cols-2 md:grid-rows-2 mt-20 md:ml-10">
 
 
-        <div>
-          <Companies
-            position={t.companies.jobs.archbishopric.position}
-            enterprise={t.companies.jobs.archbishopric.enterprise}
-            date={t.companies.jobs.archbishopric.date}
-            description={t.companies.jobs.archbishopric.description}
-          />
-
-          
-
-          
-        <Tags/>
-
-        <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
-
-        </div>
-
-
-        <div className="relative flex flex-col mt-10 md:mt-0 md:justify-center items-center ">
-          
-         
-          <div className="hidden md:block absolute bottom-0 right-0  h-3/4 bg-red-500 z-10 rounded-t-2xl w-4  mr-10">
-
-          </div>
-
-          <div className="hidden md:block absolute bottom-0 right-0 rounded-tl-3xl animate-pulse  bg-gray-400 opacity-30 w-64  h-full">
-
-         </div>
-          
-
-      
-
-          <Logos
-          image={"/logo_arzobispado.svg"}
-          />
-          
-          <div className=" w-2 bg-slate-600 h-20 rounded-2xl mt-4 md:hidden block mb-4"></div>
-
-        </div>
-
-
-        <div>
-          <Companies
-            position={t.companies.jobs.freelance.position}
-            enterprise={t.companies.jobs.freelance.enterprise}
-            date={t.companies.jobs.freelance.date}
-            description={t.companies.jobs.freelance.description}
-          />
-
-          
-
-          
-        <TagsTwo/>
-
-       
-
-        </div>
-
-
-        <div className="relative  flex flex-col mt-10 md:mt-0 md:justify-center items-center">
-         
-        
-        <div className="hidden md:block absolute top-0 right-0  h-3/4 bg-red-500 z-10 rounded-b-2xl w-4  mr-10">
-
-</div>
-        <div  className="hidden md:block  absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full">
-
-        </div>
-          <Logos
-          image={"/freelance.png"}
-          
-          />
-          
-         
-
-        </div>
-
+        {/* --- 1. MIDLEVEL --- */}
         <div>
           <Companies
             position={t.companies.jobs.midlevel.position}
@@ -188,28 +112,51 @@ export default function Home() {
             date={t.companies.jobs.midlevel.date}
             description={t.companies.jobs.midlevel.description}
           />
-
-        <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
-
+          <Tags/>
+          <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
         </div>
 
+        <div className="relative flex flex-col mt-10 md:mt-0 md:justify-center items-center ">
+          <div className="hidden md:block absolute bottom-0 right-0  h-3/4 bg-red-500 z-10 rounded-t-2xl w-4  mr-10"></div>
+          <div className="hidden md:block absolute bottom-0 right-0 rounded-tl-3xl animate-pulse  bg-gray-400 opacity-30 w-64  h-full"></div>
+          <Logos image={"/freelance.png"} />
+          <div className=" w-2 bg-slate-600 h-20 rounded-2xl mt-4 md:hidden block mb-4"></div>
+        </div>
+
+        {/* --- 2. ARCHBISHOPRIC --- */}
+        <div>
+          <Companies
+            position={t.companies.jobs.archbishopric.position}
+            enterprise={t.companies.jobs.archbishopric.enterprise}
+            date={t.companies.jobs.archbishopric.date}
+            description={t.companies.jobs.archbishopric.description}
+          />
+          <Tags/>
+          <div className="w-2 bg-slate-600 h-20 rounded-2xl mt-4 hidden md:block mb-4"></div>
+        </div>
+
+        <div className="relative flex flex-col mt-10 md:mt-0 md:justify-center items-center ">
+          <div className="hidden md:block absolute top-0 right-0 h-full bg-red-500 z-10 w-4 mr-10"></div>
+          <div className="hidden md:block absolute top-0 right-0 animate-pulse bg-gray-400 opacity-30 w-64 h-full"></div>
+          <Logos image={"/logo_arzobispado.svg"} />
+          <div className=" w-2 bg-slate-600 h-20 rounded-2xl mt-4 md:hidden block mb-4"></div>
+        </div>
+
+        {/* --- 3. FREELANCE --- */}
+        <div>
+          <Companies
+            position={t.companies.jobs.freelance.position}
+            enterprise={t.companies.jobs.freelance.enterprise}
+            date={t.companies.jobs.freelance.date}
+            description={t.companies.jobs.freelance.description}
+          />
+          <TagsTwo/>
+        </div>
 
         <div className="relative  flex flex-col mt-10 md:mt-0 md:justify-center items-center">
-         
-        
-        <div className="hidden md:block absolute top-0 right-0  h-3/4 bg-red-500 z-10 rounded-b-2xl w-4  mr-10">
-
-</div>
-        <div  className="hidden md:block  absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full">
-
-        </div>
-          <Logos
-          image={"/freelance.png"}
-          
-          />
-          
-         
-
+          <div className="hidden md:block absolute top-0 right-0  h-3/4 bg-red-500 z-10 rounded-b-2xl w-4  mr-10"></div>
+          <div className="hidden md:block absolute bottom-0 right-0 rounded-bl-3xl animate-pulse bg-gray-400 opacity-30 w-64  h-full"></div>
+          <Logos image={"/freelance.png"} />
         </div>
 
       </div>
