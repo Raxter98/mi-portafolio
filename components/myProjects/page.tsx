@@ -4,9 +4,11 @@ import "aos/dist/aos";
 import { useEffect, useRef, useState } from "react";
 import Card from "../card/page";
 import Scroll from "../scroll/page";
+import { useTranslation } from "../../hooks/useTranslation";
 
 
 const MyProjects = () => {
+  const { t } = useTranslation();
 
   const [linkVideo, setLinkVideo] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -72,7 +74,7 @@ const MyProjects = () => {
   return (
     <div  className="w-full  mt-36 text-center" data-aos="zoom-out">
       <h2 className=" text-4xl md:mb-11 text-white md:text-5xl ">
-        My projects
+        {t.projects.myProjects}
       </h2>
       <section
         
@@ -99,19 +101,19 @@ const MyProjects = () => {
             
 
             <Card
-            titulo ={"Website & CRUD Archbishopric of La Serena"}
+            titulo ={t.projects.items.arzobispado.title}
             imagen={"/arzobispado.webp"}
-            texto={"I updated and created a new website for the Archbishopric of La Serena along with an internal business system to create, read, update and delete various sections of the site including news for the institution's journalistic department."}
+            texto={t.projects.items.arzobispado.text}
             tecnologias={["React", "Next.js", "Express","MySQL","Redux","+5"]}
             pais="Chile"
             video="/arzobispado_preview.mp4"
             setLinkVideo= {setLinkVideo}
             />
 
-<Card
-            titulo ={"Worldker"}
+            <Card
+            titulo ={t.projects.items.worldker.title}
             imagen={"/worldker.png"}
-            texto={"Android application to search for work and offer services. Pre-Alpha stage"}
+            texto={t.projects.items.worldker.text}
             tecnologias={["React-Native", "Firebase","i18n","MySQL","Git","+3"]}
             pais={"Chile"}
             video="/video2.mp4"

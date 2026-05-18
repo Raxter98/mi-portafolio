@@ -4,8 +4,10 @@ import { useEffect, useState } from "react"
 import AplicacionIcon from "@/components/menuButton/page";
 import Switcher from "../switcher/switcher";
 import Select from "../select/select";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export default function Navbar(){
+    const { t } = useTranslation();
 
     const [toggle, setToggle] = useState(false)
     
@@ -72,7 +74,7 @@ export default function Navbar(){
                 <li className="text-black  dark:text-white transition transform  md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("home")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      Home
+                      {t.nav.home}
                     </span>
                   </button>
                 </li>
@@ -80,35 +82,35 @@ export default function Navbar(){
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("about")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      Experience
+                      {t.nav.experience}
                     </span>
                   </button>
                 </li>
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("projects")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      My projects
+                      {t.nav.projects}
                     </span>
                   </button>
                 </li>
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50md:p-1 p-1">
                   <button onClick={() => scrollView("skills")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      Skills
+                      {t.nav.skills}
                     </span>
                   </button>
                 </li>
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50md:p-1 p-1">
                   <button onClick={() => scrollView("education")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      Education
+                      {t.nav.education}
                     </span>
                   </button>
                 </li>
                 <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
                   <button onClick={() => scrollView("contact")}>
                     <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      Contact me
+                      {t.nav.contact}
                     </span>
                   </button>
                 </li>
@@ -157,7 +159,7 @@ export default function Navbar(){
             <li className="text-black   dark:text-white transition transform  md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("home")}>
                 <span className="p-2 flex hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-colors motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  Home
+                  {t.nav.home}
                 </span>
               </button>
             </li>
@@ -165,35 +167,35 @@ export default function Navbar(){
             <li className=" text-black  dark:text-white transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("about")}>
                 <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                Experience
+                {t.nav.experience}
                 </span>
               </button>
             </li>
             <li className="text-black  dark:text-white transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("projects")}>
                 <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  My projects
+                  {t.nav.projects}
                 </span>
               </button>
             </li>
             <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("skills")}>
                 <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  Skills
+                  {t.nav.skills}
                 </span>
               </button>
             </li>
             <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("education")}>
                 <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  Education
+                  {t.nav.education}
                 </span>
               </button>
             </li>
             <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
               <button onClick={() => scrollViewMobile("contact")}>
                 <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  Contact me
+                  {t.nav.contact}
                 </span>
               </button>
             </li>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "../../hooks/useTranslation";
+
 type contenido = {
   titulo: string;
   imagen: string;
@@ -11,7 +13,8 @@ type contenido = {
 };
 
 const Card = ({ titulo, imagen, texto, tecnologias, pais, video,setLinkVideo }: contenido) => {
-  
+  const { t } = useTranslation();
+
   const display =(section: string)=>{
     const aboutSection = document.getElementById(section); 
     setLinkVideo(video)
@@ -101,7 +104,7 @@ const Card = ({ titulo, imagen, texto, tecnologias, pais, video,setLinkVideo }: 
                 type="button"
                 onClick={()=>display("projects")}
               >
-                Display
+                {t.card.display}
               </button>
             </div>
           </div>

@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "My projects",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact me"
+  },
+  "welcome": {
+    "hi": "Hi,",
+    "myNameIs": "My name is ",
+    "developer": "Developer",
+    "downloadCv": "Download CV ↴",
+    "speaking": ["Software", " Web", " Mobile", " Full Stack"]
+  },
+  "subtitle": {
+    "text": "Having accumulated over four years of experience in designing, developing, and maintaining websites, online systems, and mobile applications, I have worked with a wide range of technologies. My versatility has enabled me to tackle projects across various platforms and environments, always striving to provide high-quality and high-performance solutions"
+  },
+  "skills": {
+    "about": "About",
+    "fullStack": "Full Stack Developer",
+    "mobileDev": "Mobile Developer",
+    "description": "With experience both as an employee and a freelancer, I have developed a well-rounded perspective on the industry and the flexibility to collaborate with diverse teams and projects. My focus on achieving results, combined with a strong passion for learning, has helped me excel in my career and drive successful outcomes. As a computer engineer, I consistently aimed for excellence in my programming courses, and my dedication is evident in the quality of my work and the satisfaction of those I work with.",
+    "my": "My",
+    "skillsTitle": "SKILLS"
+  },
+  "companies": {
+    "title1": "COMPANIES IN WHICH HAVE",
+    "title2": "COLLABORATED",
+    "developer": "Developer",
+    "jobs": {
+      "archbishopric": {
+        "position": "Web Master",
+        "enterprise": "Archbishopric of La Serena",
+        "date": "2022 (February) - Present",
+        "description": "As a web master developer at Archbishopric of La Serena, a prominent technology development company, I utilized my skills in React.js, Tailwind CSS, MySQL, to design, develop, and maintain high-quality web and mobile applications. I implemented innovative solutions, creating interactive and engaging interfaces with modern and scalable styles. Handling server logic and database management with Express and MySQL, I integrated payment services using WebPay and ensured optimal performance. At Archbishopric of La Serena, I actively participated in successful projects, demonstrating my ability to leverage modern technologies and contribute to the success of technological initiatives."
+      },
+      "freelance": {
+        "position": "Junior",
+        "enterprise": "Freelancer",
+        "date": "2020 (January) - 2022 (February)",
+        "description": "As a junior freelance developer, I designed and optimized web solutions for entrepreneurs and startups using technologies like React.js, Python, Node.js, and MongoDB, focusing on building efficient and scalable interfaces. I developed static sites with HTML/CSS and JavaScript, enhancing SEO and performance, and managed server logic while collaborating on applications such as a task manager, learning to troubleshoot real-time errors and communicate technical requirements clearly to clients. Every project, from e-commerce platforms to basic APIs, strengthened my adaptability and ability to deliver results with modern tools, even under tight deadlines and unexpected technical challenges."
+      }
+    }
+  },
+  "projects": {
+    "title1": "PROJECTS IN WHICH I HAVE",
+    "title2": "COLLABORATED",
+    "myProjects": "My projects",
+    "items": {
+      "arzobispado": {
+        "title": "Website & CRUD Archbishopric of La Serena",
+        "text": "I updated and created a new website for the Archbishopric of La Serena along with an internal business system to create, read, update and delete various sections of the site including news for the institution's journalistic department."
+      },
+      "worldker": {
+        "title": "Worldker",
+        "text": "Android application to search for work and offer services. Pre-Alpha stage"
+      }
+    }
+  },
+  "education": {
+    "title": "MY EDUCATION",
+    "subtitle": "College",
+    "items": {
+      "iacc": {
+        "title": "Higher Level Technician in Computer Science",
+        "university": "Higher Institute of Arts and Communication Sciences IACC"
+      },
+      "uniacc": {
+        "title": "Multimedia Computer Engineering",
+        "university": "University of Arts, Sciences and Communication UNIACC"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Do you have any questions or suggestions? Don't hesitate to contact me through the following means.",
+    "infoTitle": "Contact Information",
+    "infoDesc": "You can contact me directly through my email or LinkedIn.",
+    "email": "Email",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "quote1": "“The good thing about computers is that they do what you tell them to do.",
+    "quote2": "The bad news is that they do what you tell them to do.”",
+    "author": "– Ted Nelson"
+  },
+  "card": {
+    "display": "Display"
+  }
+}

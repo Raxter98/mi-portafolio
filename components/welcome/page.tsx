@@ -1,14 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const Welcome = () =>{
-    const speaking = [
-        "Software",
-        " Web",
-        " Mobile",
-        " Full Stack",
-      ];
+    const { t } = useTranslation();
+    const speaking = t.welcome.speaking;
       const [render, setRender] = useState("");
       const [welcomeTittle, setWelcome] = useState(false);
     
@@ -90,7 +87,7 @@ return (
         
             <a href="/cv.pdf" download="cv.pdf" className="ml-2 md:ml-0 md:mr-16">
               <button className=" bg-red-500 opacity-45 p-1 px-3 rounded-md hover:opacity-100 transition ease-in-out delay-150">
-                <p className="text-white text-xs">Download CV ↴</p>
+                <p className="text-white text-xs">{t.welcome.downloadCv}</p>
               </button>
             </a>
         
@@ -101,8 +98,8 @@ return (
      
 
       
-    <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">Hi,</p>
-    <p className="text-2xl md:text-3xl lg:text-4xl mb-2">My name is <span className="bg-red-500 p-1">Marcos Valero</span></p>
+    <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">{t.welcome.hi}</p>
+    <p className="text-2xl md:text-3xl lg:text-4xl mb-2">{t.welcome.myNameIs}<span className="bg-red-500 p-1">Marcos Valero</span></p>
     <section className="   md:flex">
       <h1
         className={
@@ -114,7 +111,7 @@ return (
   ))}<p className="opacity-0 animate-[pulse_1s_infinite] text-5xl    md:text-7xl">|</p>
       </h1>
     </section>
-      <p className=" inline-block text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse">Developer</p>
+      <p className=" inline-block text-5xl    md:text-7xl  bg-clip-text text-black dark:text-white animate-pulse">{t.welcome.developer}</p>
   </main>
 );
 

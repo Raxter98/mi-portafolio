@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTranslation } from "../hooks/useTranslation";
 
 
 const Education =dynamic(()=> import("@/components/Education/page"), {ssr: false})
@@ -53,9 +54,8 @@ const Navbar = dynamic(() => import('@/components/nav/page'), {
 
 
 export default function Home() {
+  const { t } = useTranslation();
   
-  
-
 
 
 
@@ -95,9 +95,9 @@ export default function Home() {
 
       <div className="text-start w-full  mt-36">
 
-        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">COMPANIES IN WHICH HAVE</span>  </h1>
+        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">{t.companies.title1}</span>  </h1>
 
-        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
+        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">{t.companies.title2}</span> </h1>
       </div>
 
 
@@ -106,10 +106,10 @@ export default function Home() {
 
         <div>
           <Companies
-            position={"Web Master"}
-            enterprise={"Archbishopricf of La Serena"}
-            date={"2022 (February) - Present"}
-            description={"As a web master developer at Archbishopricf of La Serena, a prominent technology development company, I utilized my skills in React.js, Tailwind CSS, MySQL, to design, develop, and maintain high-quality web and mobile applications. I implemented innovative solutions, creating interactive and engaging interfaces with modern and scalable styles. Handling server logic and database management with Express and MySQL, I integrated payment services using WebPay and ensured optimal performance. At Archbishopricf of La Serena, I actively participated in successful projects, demonstrating my ability to leverage modern technologies and contribute to the success of technological initiatives."}
+            position={t.companies.jobs.archbishopric.position}
+            enterprise={t.companies.jobs.archbishopric.enterprise}
+            date={t.companies.jobs.archbishopric.date}
+            description={t.companies.jobs.archbishopric.description}
           />
 
           
@@ -147,10 +147,10 @@ export default function Home() {
 
         <div>
           <Companies
-            position={"Junior"}
-            enterprise={"Freelancer"}
-            date={"2020 (January) - 2022 (February)"}
-            description={"As a junior freelance developer, I designed and optimized web solutions for entrepreneurs and startups using technologies like React.js, Python, Node.js, and MongoDB, focusing on building efficient and scalable interfaces. I developed static sites with HTML/CSS and JavaScript, enhancing SEO and performance, and managed server logic while collaborating on applications such as a task manager, learning to troubleshoot real-time errors and communicate technical requirements clearly to clients. Every project, from e-commerce platforms to basic APIs, strengthened my adaptability and ability to deliver results with modern tools, even under tight deadlines and unexpected technical challenges."}
+            position={t.companies.jobs.freelance.position}
+            enterprise={t.companies.jobs.freelance.enterprise}
+            date={t.companies.jobs.freelance.date}
+            description={t.companies.jobs.freelance.description}
           />
 
           
@@ -187,9 +187,9 @@ export default function Home() {
     
       <div className="text-start w-full  mt-36 mb-6">
 
-        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">PROJECTS IN WHICH I HAVE</span>  </h1>
+        <h1 className="bg-red-500 p-2 md:p-0 md:bg-transparent md:mx-10 text-black dark:text-white block flex-wrap text-3xl   md:text-5xl "> <span className="md:bg-red-500  md:p-2 md:text-nowrap">{t.projects.title1}</span>  </h1>
 
-        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">COLLABORATED</span> </h1>
+        <h1 className=" md:mx-10 text-black dark:text-white  block text-3xl    md:text-5xl mt-3"> <span className="border-b-2 border-red-500 ">{t.projects.title2}</span> </h1>
       </div>
 
      

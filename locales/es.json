@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Mis proyectos",
+    "skills": "Habilidades",
+    "education": "Educación",
+    "contact": "Contáctame"
+  },
+  "welcome": {
+    "hi": "Hola,",
+    "myNameIs": "Mi nombre es ",
+    "developer": "Desarrollador",
+    "downloadCv": "Descargar CV ↴",
+    "speaking": ["Software", " Web", " Móvil", " Full Stack"]
+  },
+  "subtitle": {
+    "text": "Habiendo acumulado más de cuatro años de experiencia en el diseño, desarrollo y mantenimiento de sitios web, sistemas en línea y aplicaciones móviles, he trabajado con una amplia gama de tecnologías. Mi versatilidad me ha permitido abordar proyectos en diversas plataformas y entornos, siempre esforzándome por brindar soluciones de alta calidad y alto rendimiento."
+  },
+  "skills": {
+    "about": "Sobre Mí",
+    "fullStack": "Desarrollador Full Stack",
+    "mobileDev": "Desarrollador Móvil",
+    "description": "Con experiencia tanto como empleado como profesional independiente, he desarrollado una perspectiva integral de la industria y la flexibilidad para colaborar con diversos equipos y proyectos. Mi enfoque en lograr resultados, combinado con una fuerte pasión por el aprendizaje, me ha ayudado a sobresalir en mi carrera y lograr resultados exitosos. Como ingeniero informático, siempre apunté a la excelencia en mis cursos de programación, y mi dedicación es evidente en la calidad de mi trabajo y la satisfacción de aquellos con quienes trabajo.",
+    "my": "Mis",
+    "skillsTitle": "HABILIDADES"
+  },
+  "companies": {
+    "title1": "EMPRESAS EN LAS QUE HE",
+    "title2": "COLABORADO",
+    "developer": "Desarrollador",
+    "jobs": {
+      "archbishopric": {
+        "position": "Web Master",
+        "enterprise": "Arzobispado de La Serena",
+        "date": "2022 (Febrero) - Presente",
+        "description": "Como desarrollador web master en el Arzobispado de La Serena, utilicé mis habilidades en React.js, Tailwind CSS y MySQL para diseñar, desarrollar y mantener aplicaciones web y móviles de alta calidad. Implementé soluciones innovadoras, creando interfaces interactivas y atractivas con estilos modernos y escalables. Manejando la lógica del servidor y la gestión de bases de datos con Express y MySQL, integré servicios de pago mediante WebPay y garanticé un rendimiento óptimo. Participé activamente en proyectos exitosos, demostrando mi capacidad para aprovechar tecnologías modernas y contribuir al éxito de iniciativas tecnológicas."
+      },
+      "freelance": {
+        "position": "Junior",
+        "enterprise": "Freelancer",
+        "date": "2020 (Enero) - 2022 (Febrero)",
+        "description": "Como desarrollador junior independiente, diseñé y optimicé soluciones web para emprendedores y startups utilizando tecnologías como React.js, Python, Node.js y MongoDB, enfocándome en construir interfaces eficientes y escalables. Desarrollé sitios estáticos con HTML/CSS y JavaScript, mejorando el SEO y el rendimiento, y gestioné la lógica del servidor colaborando en aplicaciones como un administrador de tareas, aprendiendo a solucionar errores en tiempo real y comunicar requerimientos técnicos claramente a los clientes. Cada proyecto fortaleció mi adaptabilidad y capacidad para entregar resultados con herramientas modernas, incluso bajo plazos ajustados y desafíos técnicos inesperados."
+      }
+    }
+  },
+  "projects": {
+    "title1": "PROYECTOS EN LOS QUE HE",
+    "title2": "COLABORADO",
+    "myProjects": "Mis proyectos",
+    "items": {
+      "arzobispado": {
+        "title": "Sitio Web y CRUD Arzobispado de La Serena",
+        "text": "Actualicé y creé un nuevo sitio web para el Arzobispado de La Serena junto con un sistema interno de la empresa para crear, leer, actualizar y eliminar diversas secciones del sitio, incluidas noticias para el departamento periodístico de la institución."
+      },
+      "worldker": {
+        "title": "Worldker",
+        "text": "Aplicación de Android para buscar trabajo y ofrecer servicios. Etapa Pre-Alpha."
+      }
+    }
+  },
+  "education": {
+    "title": "MI EDUCACIÓN",
+    "subtitle": "Universidad",
+    "items": {
+      "iacc": {
+        "title": "Técnico de Nivel Superior en Informática",
+        "university": "Instituto Profesional IACC"
+      },
+      "uniacc": {
+        "title": "Ingeniería Informática Multimedia",
+        "university": "Universidad de Artes, Ciencias y Comunicación UNIACC"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes alguna pregunta o sugerencia? No dudes en contactarme por los siguientes medios.",
+    "infoTitle": "Información de Contacto",
+    "infoDesc": "Puedes contactarme directamente a través de mi correo electrónico o LinkedIn.",
+    "email": "Correo electrónico",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "quote1": "“Lo bueno de las computadoras es que hacen lo que les dices que hagan.",
+    "quote2": "Las malas noticias son que hacen lo que les dices que hagan.”",
+    "author": "– Ted Nelson"
+  },
+  "card": {
+    "display": "Ver"
+  }
+}

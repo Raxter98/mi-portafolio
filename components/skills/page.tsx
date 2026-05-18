@@ -5,8 +5,10 @@ import { Badge } from 'flowbite-react';
 import Profile from '../../public/me.jpg';
 import SkillsIcons from './SkillsIcons';
 import { Fade, Slide } from 'react-awesome-reveal';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Skills: FunctionComponent = () => {
+    const { t } = useTranslation();
 
 	return (
 		<div id="aboutme" className=" flex flex-col lg:flex-row justify-center items-center w-full space-y-10">
@@ -14,7 +16,7 @@ const Skills: FunctionComponent = () => {
 				<div className="flex justify-start items-start">
 					<div className="mt-10 z-10 flex flex-wrap md:flex-col gap-y-4 justify-start">
 						<div className="flex flex-col gap-y-2 items-start">
-							<Text className="bg-red-500 text-white text-4xl md:text-5xl font-normal px-2 py-1">About</Text>
+							<Text className="bg-red-500 text-white text-4xl md:text-5xl font-normal px-2 py-1">{t.skills.about}</Text>
 							<Text className="px-2 text-4xl md:text-5xl font-black underline underline-offset-4 decoration-red-500">
 								<Fade
 									className="underline underline-offset-4 decoration-red-500"
@@ -34,8 +36,8 @@ const Skills: FunctionComponent = () => {
 									cascade
 									triggerOnce
 								>
-									<Badge color="primary">Full Stack Developer</Badge>
-									<Badge color="primary">Mobile Developer</Badge>
+									<Badge color="primary">{t.skills.fullStack}</Badge>
+									<Badge color="primary">{t.skills.mobileDev}</Badge>
 								</Fade>
 							</div>
 						</div>
@@ -59,14 +61,14 @@ const Skills: FunctionComponent = () => {
 			</div>
 			<div className="md:flex md:flex-col justify-center h-[70%] lg:w-1/2 space-y-5 lg:max-w-[700px]">
 				<div className="lg:mt-10 z-10 flex flex-col gap-y-5 items-center md:items-start">
-					<Text className="text-xl text-black dark:text-white font-normal">With experience both as an employee and a freelancer, I have developed a well-rounded perspective on the industry and the flexibility to collaborate with diverse teams and projects. My focus on achieving results, combined with a strong passion for learning, has helped me excel in my career and drive successful outcomes. As a computer engineer, I consistently aimed for excellence in my programming courses, and my dedication is evident in the quality of my work and the satisfaction of those I work with.</Text>
+					<Text className="text-xl text-black dark:text-white font-normal">{t.skills.description}</Text>
 					
 				</div>
 				<div className="pt-10 pb-5 flex flex-row gap-2 items-end">
 					<Text className="text-4xl font-black underline underline-offset-4 decoration-red-500">
-						My
+						{t.skills.my}
 					</Text>
-					<Text className="bg-red-500 text-white font-normal text-4xl px-2 py-1">SKILLS</Text>
+					<Text className="bg-red-500 text-white font-normal text-4xl px-2 py-1">{t.skills.skillsTitle}</Text>
 				</div>
 				<SkillsIcons />
 			</div>

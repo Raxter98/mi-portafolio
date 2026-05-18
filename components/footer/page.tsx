@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image"
+import { useTranslation } from "../../hooks/useTranslation";
 
 export default function Footer(){
+    const { t } = useTranslation();
     return(
        
         
@@ -19,10 +21,10 @@ export default function Footer(){
             width={30}
             height={30}
           />
-          “The good thing about computers is that they do what you tell them to do. 
+          {t.footer.quote1} 
           <br/>
-          The bad news is that they do what you tell them to do.” 
-          <br/>– Ted Nelson
+          {t.footer.quote2} 
+          <br/>{t.footer.author}
         </h5>
       </footer>
 
