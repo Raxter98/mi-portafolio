@@ -13,7 +13,7 @@ import {
 	FaHtml5,
 	FaPython,
 	FaReact,
-	FaWordpress,
+	FaChartBar,
 } from 'react-icons/fa';
 import { IoLogoNodejs } from 'react-icons/io';
 import {
@@ -100,18 +100,18 @@ export const icons = [
 		name: 'Bootstrap',
 		textColor: '#FFFFFF',
 	},
-	
-	
+
+
 	{
 		icon: SiFirebase,
 		color: '#FCCA2A',
 		name: 'Firebase',
 		textColor: '#000000',
 	},
-	
-	
-	
-	
+
+
+
+
 	{
 		icon: SiMysql,
 		color: '#DF8A01',
@@ -124,7 +124,7 @@ export const icons = [
 		name: 'PostgreSQL',
 		textColor: '#FFFFFF',
 	},
-	
+
 	{
 		icon: FaAppStoreIos,
 		color: '#2CA0F4',
@@ -149,20 +149,25 @@ export const icons = [
 		name: 'GitHub',
 		textColor: '#FFFFFF',
 	},
-	
-	
+
+
 	{
 		icon: SiPostman,
 		color: '#F26836',
 		name: 'Postman',
 		textColor: '#FFFFFF',
 	},
-	
+
 	{
 		icon: FaApple,
 		color: '#000000',
 		name: 'Mac OS',
 		textColor: '#FFFFFF',
 	},
-	
+	{
+		icon: FaChartBar,
+		color: '#F2C811',
+		name: 'Power BI',
+		textColor: '#000000',
+	},
 ];
