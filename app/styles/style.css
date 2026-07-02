@@ -6,9 +6,7 @@
   display: none;
 }
 
-body{
-    background-color:black;
-  }
+/* background controlled by globals.css dark/light mode */
 
 
   

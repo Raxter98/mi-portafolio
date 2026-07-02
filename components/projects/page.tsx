@@ -20,18 +20,18 @@ useEffect(() => {
 
   return (
     <div
-      className="relative w-full aspect-[16/10] h-full bg-cover bg-no-repeat bg-left-top   overflow-hidden cursor-pointer"
+      className="group relative w-full aspect-[16/10] h-full overflow-hidden rounded-lg border border-white/10 bg-cover bg-no-repeat bg-left-top cursor-pointer shadow-2xl shadow-black/30"
       style={{ backgroundImage: `url(${imageUrl})` }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       data-aos="fade-up"
     >
       {/* Overlay Oscuro */}
-      <div className="absolute inset-0 bg-black hover:bg-gray-500 hover:bg-opacity-40 bg-opacity-40 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent transition-opacity duration-300 group-hover:from-red-950/80" />
 
       {/* Información (Aparece en Hover en PC, siempre visible o adaptado en Móvil) */}
       <div
-        className={`absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 backdrop-blur-md bg-red-900/80 md:bg-red-900/60 border border-red-500/30 text-white p-3 md:p-5 rounded-xl md:rounded-2xl shadow-xl shadow-red-900/20 transform transition-all duration-300 ${
+        className={`absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 backdrop-blur-md bg-zinc-950/78 border border-red-500/30 text-white p-3 md:p-5 rounded-lg shadow-xl shadow-red-900/20 transform transition-all duration-300 ${
           hovered ? "translate-y-0 opacity-100" : "translate-y-2 md:translate-y-4 opacity-100 md:opacity-0"
         }`}
       >

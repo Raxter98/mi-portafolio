@@ -115,7 +115,7 @@
     "title": "Contact",
     "subtitle": "Do you have any questions or suggestions? Don't hesitate to contact me through the following means.",
     "infoTitle": "Contact Information",
-    "infoDesc": "You can contact me directly through my email or LinkedIn.",
+    "infoDesc": "You can contact me directly through email, LinkedIn, or WhatsApp.",
     "email": "Email",
     "linkedin": "LinkedIn"
   },
@@ -126,5 +126,15 @@
   },
   "card": {
     "display": "Display"
+  },
+  "cube": {
+    "demo": "Interactive Demo",
+    "dragHint": "Drag the 3D element or click on a face to view project details",
+    "dragHintMobile": "Drag or click to explore",
+    "technologies": "Technologies",
+    "prev": "Previous",
+    "next": "Next",
+    "stop": "Stop",
+    "viewProject": "View Project"
   }
 }

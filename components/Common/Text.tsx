@@ -6,7 +6,7 @@ interface TextProps {
 }
 
 const Text: FunctionComponent<TextProps> = ({ children, className }) => {
-	return <span className={`${className ?? 'text-black'} dark:text-white`}>{children}</span>;
+	return <span className={`${className ?? 'text-white'}`}>{children}</span>;
 };
 
 export default Text;

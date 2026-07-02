@@ -1,61 +1,62 @@
-import React, { useState, useEffect } from 'react'
+"use client";
 
-const Switcher= () => {
-  const [isChecked, setIsChecked] = useState(true)
+import React, { useState, useEffect } from "react";
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked)
-  }
+const Switcher = () => {
+  // true = dark mode (default)
+  const [isDark, setIsDark] = useState(true);
 
+  // Apply initial class on mount
   useEffect(() => {
-    if (isChecked) {
+    document.documentElement.classList.add("dark");
+  }, []);
+
+  const toggle = () => {
+    const next = !isDark;
+    setIsDark(next);
+    if (next) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [isChecked]);
-
-  useEffect(() => {
-    // Cambiar el color de fondo y texto del body según el tema
-    if (isChecked) {
-      document.body.style.backgroundColor = 'var(--background-dark)';
-      document.body.style.color = 'var(--foreground-dark)';
-    } else {
-      document.body.style.backgroundColor = 'var(--background-light)';
-      document.body.style.color = 'var(--foreground-light)';
-    }
-  }, [isChecked]);
-
+  };
 
   return (
-    <>
-      <label className='themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center'>
-        <input
-          type='checkbox'
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-          className='sr-only'
-        />
-        <span className='label flex items-center text-sm font-medium text-black  dark:text-white'>
-          Light
-        </span>
-        <span
-          className={`slider mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200 ${
-            isChecked ? 'bg-[#212b36]' : 'bg-[#CCCCCE]'
-          }`}
-        >
-          <span
-            className={`dot h-6 w-6 rounded-full bg-white duration-200 ${
-              isChecked ? 'translate-x-[28px]' : ''
-            }`}
-          ></span>
-        </span>
-        <span className='label flex items-center text-sm font-medium text-black  dark:text-white'>
-          Dark
-        </span>
-      </label>
-    </>
-  )
-}
+    <button
+      onClick={toggle}
+      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      className={`
+        relative inline-flex items-center h-8 w-[60px] rounded-full
+        cursor-pointer select-none transition-all duration-300 focus:outline-none
+        ${isDark ? "bg-zinc-700 shadow-inner shadow-zinc-900" : "bg-zinc-200 shadow-inner shadow-zinc-400"}
+      `}
+    >
+      {/* Track icons */}
+      <span className="absolute left-1.5 text-[11px] select-none transition-opacity duration-200"
+        style={{ opacity: isDark ? 0.4 : 0 }}>
+        ☀️
+      </span>
+      <span className="absolute right-1.5 text-[11px] select-none transition-opacity duration-200"
+        style={{ opacity: isDark ? 1 : 0.4 }}>
+        🌙
+      </span>
 
-export default Switcher
+      {/* Thumb */}
+      <span
+        className={`
+          absolute top-1 h-6 w-6 rounded-full shadow-md
+          flex items-center justify-center text-sm
+          transition-all duration-300 ease-in-out
+          ${isDark
+            ? "translate-x-[30px] bg-zinc-900 text-white"
+            : "translate-x-1 bg-white text-yellow-500"
+          }
+        `}
+      >
+        {isDark ? "🌙" : "☀️"}
+      </span>
+    </button>
+  );
+};
+
+export default Switcher;

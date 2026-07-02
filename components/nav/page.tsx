@@ -1,215 +1,124 @@
 "use client";
 
-import { useEffect, useState } from "react"
-import AplicacionIcon from "@/components/menuButton/page";
+import { useState, useEffect } from "react";
 import Switcher from "../switcher/switcher";
 import Select from "../select/select";
 import { useTranslation } from "../../hooks/useTranslation";
+import { Menu, X } from "lucide-react";
 
-export default function Navbar(){
-    const { t } = useTranslation();
+export default function Navbar() {
+  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    const [toggle, setToggle] = useState(false)
-    
-    const [isChecked, setIsChecked] = useState(false)
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked)
-  }
-
-    
-    const hidden =() =>{
-
-        if(toggle=== true){
-            setToggle(false)
-        }else if(toggle === false){
-            setToggle(true);
-        }
-
-    }
-
-    const scrollView = (section: string) => {
-      
-        const aboutSection = document.getElementById(section);
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
-   
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    const scrollViewMobile = (section: string) => {
-      
-      const aboutSection = document.getElementById(section);
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      setToggle(false)
- 
+  const scrollToSection = (id: string) => {
+    setIsOpen(false);
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-    return (
-      <div className= {toggle ? "fixed top-0 left-0 h-full flex justify-between  z-50 bg-white dark:bg-black text-black  dark:text-white w-full ": "fixed top-0 left-0 h-24 flex justify-between  z-50 bg-white dark:bg-black text-black  dark:text-white w-full "}>
+  const navLinks = [
+    { name: t.nav.home, id: "home" },
+    { name: t.nav.experience, id: "about" },
+    { name: t.nav.projects, id: "projects" },
+    { name: t.nav.skills, id: "skills" },
+    { name: t.nav.education, id: "education" },
+    { name: t.nav.contact, id: "contact" },
+  ];
 
-
-        <div className="hidden mt-4 md:flex h-24  justify-between items-center w-full px-8">
-<div>
-
-        <img
-          alt=""
-          src={"logoMarcos.svg"}
-          width={200}
-          height={200}
-          className=""
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled || isOpen
+          ? "bg-white/80 dark:bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-200/50 dark:border-white/10 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+        
+        {/* Logo */}
+        <button 
+          onClick={() => scrollToSection("home")} 
+          className="flex items-center flex-shrink-0 group focus:outline-none"
+        >
+          <img
+            src="/logoMarcos.svg"
+            alt="Marcos Valero Logo"
+            className="w-auto h-7 md:h-9 dark:invert transition-all duration-300 group-hover:scale-105"
           />
-</div>
-        
+        </button>
 
-        <div>
+        {/* Desktop Links */}
+        <nav className="hidden lg:flex items-center gap-2 xl:gap-4 flex-1 justify-center">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="px-4 py-2 text-sm font-semibold tracking-wide text-zinc-600 dark:text-zinc-300 hover:text-red-500 dark:hover:text-white transition-colors relative group focus:outline-none"
+            >
+              {link.name}
+              <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4 rounded-full" />
+            </button>
+          ))}
+        </nav>
 
-        
-              <ul className="md:inline-flex whitespace-nowrap md:gap-x-6">
-
-             
-                <li className="text-black  dark:text-white transition transform  md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
-                  <button onClick={() => scrollView("home")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.home}
-                    </span>
-                  </button>
-                </li>
-
-                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
-                  <button onClick={() => scrollView("about")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.experience}
-                    </span>
-                  </button>
-                </li>
-                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom  hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
-                  <button onClick={() => scrollView("projects")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.projects}
-                    </span>
-                  </button>
-                </li>
-                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50md:p-1 p-1">
-                  <button onClick={() => scrollView("skills")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.skills}
-                    </span>
-                  </button>
-                </li>
-                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50md:p-1 p-1">
-                  <button onClick={() => scrollView("education")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.education}
-                    </span>
-                  </button>
-                </li>
-                <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom   hover:bg-gray-50 dark:hover:text-black dark:hover:bg-gray-50 md:p-1 p-1">
-                  <button onClick={() => scrollView("contact")}>
-                    <span className="block hover:translate-x-4 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                      {t.nav.contact}
-                    </span>
-                  </button>
-                </li>
-              </ul>
-              </div>
-
-
-          <div className="flex gap-x-2">
-
+        {/* Actions (Language, Theme, Mobile Toggle) */}
+        <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
+          <div className="hidden sm:flex items-center bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-1">
             <Select />
+          </div>
+          
+          <div className="flex items-center">
             <Switcher />
           </div>
-
-              
-          </div>
           
-      
-
-          
-
-
-        <div className="md:hidden flex justify-between  h-10 z-50 bg-white dark:bg-black text-black  dark:text-white m-4 w-full">
-        
-        <div className="md:hidden m-4  z-20">
-
-<img
-  alt=""
-  src={"logoMarcos.svg"}
-  width={200}
-  height={200}
-  className=""
-  />
-</div>
-
-
-          <div className=" z-20 text-black  dark:text-white   hover:text-[#1a1a1a]">
-            <button className="" onClick={() => hidden()}>
-
-              <AplicacionIcon />
-            </button>
-          </div>
-          
+          <button
+            className="lg:hidden p-2 -mr-2 text-zinc-800 dark:text-zinc-200 hover:text-red-500 transition-colors focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-
-        <ul className={toggle ? "md:hidden absolute w-full h-full mt-16 text-center bg-white dark:bg-black z-10 flex flex-col gap-y-5" : "hidden"}>
-            <li className="text-black   dark:text-white transition transform  md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("home")}>
-                <span className="p-2 flex hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-colors motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  {t.nav.home}
-                </span>
-              </button>
-            </li>
-
-            <li className=" text-black  dark:text-white transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("about")}>
-                <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                {t.nav.experience}
-                </span>
-              </button>
-            </li>
-            <li className="text-black  dark:text-white transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("projects")}>
-                <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  {t.nav.projects}
-                </span>
-              </button>
-            </li>
-            <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("skills")}>
-                <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  {t.nav.skills}
-                </span>
-              </button>
-            </li>
-            <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("education")}>
-                <span className=" p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  {t.nav.education}
-                </span>
-              </button>
-            </li>
-            <li className="text-black  dark:text-white transition transform md:hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-custom rounded md:mr-12  dark:hover:text-black  md:p-1 p-1">
-              <button onClick={() => scrollViewMobile("contact")}>
-                <span className="p-2 block hover:bg-gray-50 dark:hover:bg-gray-50 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none md:hover:translate-x-0">
-                  {t.nav.contact}
-                </span>
-              </button>
-            </li>
-
-            <li>
-              <Select />
-
-            </li>
-
-            <li>
-              <Switcher /></li>
-          </ul>
-
       </div>
-    );
-}
 
+      {/* Mobile Menu Dropdown */}
+      <div
+        className={`lg:hidden absolute top-20 left-0 w-full bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-white/10 shadow-xl transition-all duration-300 ease-in-out origin-top overflow-hidden ${
+          isOpen ? "max-h-[400px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+        }`}
+      >
+        <div className="flex flex-col items-center gap-2 px-6">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="w-full py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-400 hover:bg-zinc-50 dark:hover:bg-white/5 rounded-xl transition-colors focus:outline-none"
+            >
+              {link.name}
+            </button>
+          ))}
+          <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-white/10 w-full flex justify-center sm:hidden">
+            <div className="bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-2">
+              <Select />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

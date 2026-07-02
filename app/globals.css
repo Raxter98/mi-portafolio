@@ -3,30 +3,90 @@
 @tailwind utilities;
 
 :root {
-  --background-light: white; /* Color de fondo en modo claro */
-  --foreground-light: black; /* Color de texto en modo claro */
-  --background-dark: black;  /* Color de fondo en modo oscuro */
-  --foreground-dark: white;  /* Color de texto en modo oscuro */
+  --background-light: #f4f4f5;
+  --foreground-light: #18181b;
+  --background-dark: #09090b;
+  --foreground-dark: #f8fafc;
 }
 
 body {
-  background-color: var(--background-light);
-  color: var(--foreground-light);
+  background-color: #09090b;
+  color: #f8fafc;
   font-family: 'DefaultFont', sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.3s, color 0.3s; /* Transición suave entre colores */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Modo claro: cuando NO hay clase dark en html */
+html:not(.dark) body {
+  background-color: #f4f4f5;
+  color: #18181b;
+}
+
+.portfolio-shell {
+  background:
+    radial-gradient(circle at 12% 42%, rgba(239, 68, 68, 0.16), transparent 26rem),
+    radial-gradient(circle at 88% 72%, rgba(255, 255, 255, 0.08), transparent 22rem),
+    #09090b;
+  transition: background 0.4s ease;
+}
+
+html:not(.dark) .portfolio-shell {
+  background:
+    radial-gradient(circle at 12% 42%, rgba(239, 68, 68, 0.10), transparent 26rem),
+    radial-gradient(circle at 88% 72%, rgba(0, 0, 0, 0.04), transparent 22rem),
+    #f4f4f5;
+}
+
+.portfolio-nav {
+  background: rgba(9, 9, 11, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+html:not(.dark) .portfolio-nav {
+  background: rgba(244, 244, 245, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-nav li,
+.portfolio-nav button,
+.portfolio-nav span {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .portfolio-nav li,
+html:not(.dark) .portfolio-nav button,
+html:not(.dark) .portfolio-nav span {
+  color: #18181b !important;
+}
+
+.portfolio-nav li:hover span {
+  color: #09090b !important;
+}
+
+html:not(.dark) .portfolio-nav li:hover span {
+  color: #ffffff !important;
 }
 
 .text-custom {
   font-family: var(--font-default);
-  font-weight: 600; /* Semi-bold */
+  font-weight: 600;
 }
-
-
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  
-  
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -7,113 +7,124 @@ type contenido = {
   imagen: string;
   texto: string;
   tecnologias: string[];
-  pais:string;
-  video:string;
+  pais: string;
+  video: string;
   setLinkVideo: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-const Card = ({ titulo, imagen, texto, tecnologias, pais, video,setLinkVideo }: contenido) => {
+const Card = ({ titulo, imagen, texto, tecnologias, pais, video, setLinkVideo }: contenido) => {
   const { t } = useTranslation();
 
-  const display =(section: string)=>{
-    const aboutSection = document.getElementById(section); 
-    setLinkVideo(video)
+  const display = (section: string) => {
+    const aboutSection = document.getElementById(section);
+    setLinkVideo(video);
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    } 
-   
-    
-  }
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="card">
-      <div className="flex justify-center items-center mt-20">
-        <div className="max-w-[720px] mx-auto">
-          <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-            <div className=" relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
-              
-                <img src={imagen} className="max-h-[15rem] md:max-h-[26rem] mx-auto" alt="ui/ux review check" />
-              
+      <div className="flex justify-center items-center mt-12 px-4">
+        <div className="w-full max-w-sm group">
+          {/* Card container */}
+          <div className="relative flex flex-col rounded-2xl overflow-hidden
+            bg-white dark:bg-zinc-900
+            border border-zinc-200 dark:border-white/10
+            shadow-xl shadow-black/10 dark:shadow-black/40
+            transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10 dark:hover:shadow-red-500/20
+            hover:-translate-y-1"
+          >
+            {/* Image section */}
+            <div className="relative overflow-hidden h-52">
+              <img
+                src={imagen}
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                alt={titulo}
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-              <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
-              <button
-                className="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
-               
-              >
-                <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-3">
-                <h5 className="block font-sans text-xl antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
-                  {titulo}
-                </h5>
-                <p className="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="-mt-0.5 h-5 w-5 text-yellow-700"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  {pais}
-                </p>
+              {/* Country badge */}
+              <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-3.5 h-3.5 text-yellow-400"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {pais}
               </div>
-              <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
+
+              {/* Red accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 via-red-400 to-transparent" />
+            </div>
+
+            {/* Content section */}
+            <div className="p-5 flex flex-col gap-4">
+              {/* Title */}
+              <h5 className="text-lg font-bold leading-tight
+                text-zinc-900 dark:text-white
+                group-hover:text-red-600 dark:group-hover:text-red-400
+                transition-colors duration-300"
+              >
+                {titulo}
+              </h5>
+
+              {/* Description */}
+              <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 line-clamp-3">
                 {texto}
               </p>
-              <div className="inline-flex flex-wrap items-center gap-3 mt-8 group">
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                 {tecnologias[0]}
-                </span>
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                {tecnologias[1]}
-                </span>
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                {tecnologias[2]}
-                </span>
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                {tecnologias[3]}
-                </span>
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                {tecnologias[4]}
-                </span>
-                <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
-                {tecnologias[5]}
-                </span>
+
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2">
+                {tecnologias.filter(Boolean).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs font-medium px-2.5 py-1 rounded-full
+                      bg-zinc-100 dark:bg-zinc-800
+                      text-zinc-700 dark:text-zinc-300
+                      border border-zinc-200 dark:border-zinc-700
+                      hover:border-red-400 hover:text-red-600 dark:hover:text-red-400
+                      transition-colors duration-200 cursor-default"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
-            <div className="p-6 pt-3">
+
+            {/* CTA Button */}
+            <div className="px-5 pb-5">
               <button
-                className="transform active:scale-75 transition-transform block w-full select-none rounded-lg bg-gray-900 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10  hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="w-full py-3 px-6 rounded-xl text-sm font-bold uppercase tracking-wide
+                  bg-zinc-900 dark:bg-white
+                  text-white dark:text-zinc-900
+                  hover:bg-red-600 dark:hover:bg-red-500
+                  hover:text-white dark:hover:text-white
+                  border border-transparent hover:border-red-500
+                  shadow-md hover:shadow-red-500/30
+                  transform active:scale-95 transition-all duration-200"
                 type="button"
-                onClick={()=>display("projects")}
+                onClick={() => display("projects")}
               >
                 {t.card.display}
               </button>
             </div>
+
+            {/* Decorative glow on hover */}
+            <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{ background: 'linear-gradient(135deg, transparent 60%, rgba(239,68,68,0.15) 100%)' }}
+            />
           </div>
         </div>
       </div>
-
-
-
-      
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Education = dynamic(() => import("@/components/Education/page"), {
   ssr: false,
 });
 
-const Projects = dynamic(() => import("@/components/projects/page"), {
+const MyProjects = dynamic(() => import("@/components/myProjects/page"), {
   ssr: false,
 });
 
@@ -31,10 +31,6 @@ const Subtitle = dynamic(() => import("@/components/subtittle/page"), {
   ssr: false,
 });
 
-const Programing = dynamic(() => import("@/components/programing/page"), {
-  ssr: false,
-});
-
 const Footer = dynamic(() => import("@/components/footer/page"), {
   ssr: false,
 });
@@ -55,25 +51,49 @@ const Navbar = dynamic(() => import("@/components/nav/page"), {
   ssr: false,
 });
 
+const ThreeHero = dynamic(() => import("@/components/threeHero/page"), {
+  ssr: false,
+});
+
 export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden">
+    <div className="portfolio-shell flex flex-col items-center overflow-x-hidden bg-zinc-950 dark:bg-zinc-950 text-zinc-900 dark:text-white">
       <Navbar />
 
       <div id="home" />
 
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 items-center w-full max-w-7xl px-5 md:px-10 pt-10">
-        <div>
+      <section className="relative min-h-screen w-full overflow-hidden px-5 pt-28 md:px-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(239,68,68,0.28),transparent_34%),linear-gradient(135deg,#09090b_0%,#111113_50%,#18181b_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-zinc-950 to-transparent" />
+
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] w-full max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-[0.92fr_1.08fr]">
+          <div className="max-w-3xl">
           <Welcome />
           <Subtitle />
-        </div>
 
-        <div className="hidden md:flex justify-center items-center">
-          <div className="rounded-full shadow-lg shadow-red-500/50">
-            <Programing />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="mailto:marcos@marcosvalero.com"
+                className="w-fit rounded-md bg-red-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-950/30 transition hover:bg-red-400"
+              >
+                marcos@marcosvalero.com
+              </a>
+              <a
+                href="https://wa.me/56935264725"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit rounded-md border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-red-300 hover:bg-white/15"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div className="relative -mx-5 md:mx-0">
+            <ThreeHero />
           </div>
         </div>
       </section>
@@ -81,14 +101,17 @@ export default function Home() {
       <div id="about" />
 
       {/* TITULO EXPERIENCIA */}
-      <section className="text-start w-full mt-32 max-w-7xl px-5 md:px-10">
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl flex flex-wrap">
-          <span className="bg-red-500 p-2">
+      <section className="text-start w-full mt-24 max-w-7xl px-5 md:px-10">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-red-400">
+          Experiencia
+        </p>
+        <h1 className="text-zinc-900 dark:text-white text-3xl md:text-5xl flex flex-wrap">
+          <span className="bg-red-500 px-3 py-2">
             {t.companies.title1}
           </span>
         </h1>
 
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl mt-4">
+        <h1 className="text-zinc-900 dark:text-white text-3xl md:text-5xl mt-4">
           <span className="border-b-2 border-red-500">
             {t.companies.title2}
           </span>
@@ -96,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* EXPERIENCIA */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-10 w-full max-w-7xl px-5 md:px-10 mt-20">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-10 w-full max-w-7xl px-5 md:px-10 mt-16">
         {/* MIDLEVEL */}
         <div className="flex flex-col">
           <Companies
@@ -177,108 +200,15 @@ export default function Home() {
 
       <div id="projects" />
 
-      {/* TITULO PROYECTOS */}
-      <section className="text-start w-full mt-36 mb-10 max-w-7xl px-5 md:px-10">
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl flex flex-wrap">
-          <span className="bg-red-500 p-2">
-            {t.projects.title1}
-          </span>
-        </h1>
-
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl mt-4">
-          <span className="border-b-2 border-red-500">
-            {t.projects.title2}
-          </span>
-        </h1>
-      </section>
-
-      {/* PROYECTOS */}
-      <section className="relative grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-7xl px-5 md:px-10">
-        {/* principal */}
-        <div className="md:row-span-2 z-10">
-          <Projects
-            enterpriseName={t.projects.items.worldker.title}
-            appName={t.projects.items.worldker.text}
-            imageUrl="/worldker.png"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.arzobispadoWeb.title}
-            appName={t.projects.items.arzobispadoWeb.text}
-            imageUrl="/arzobispado.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.arzobispadoCrud.title}
-            appName={t.projects.items.arzobispadoCrud.text}
-            imageUrl="/crud.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.alcaldia.title}
-            appName={t.projects.items.alcaldia.text}
-            imageUrl="/projects/Alcaldia.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.autovidrios.title}
-            appName={t.projects.items.autovidrios.text}
-            imageUrl="/projects/AutoVidrios.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.fiado.title}
-            appName={t.projects.items.fiado.text}
-            imageUrl="/projects/Fiado.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.jccrp.title}
-            appName={t.projects.items.jccrp.text}
-            imageUrl="/projects/Jccrp.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.perfecttrainer.title}
-            appName={t.projects.items.perfecttrainer.text}
-            imageUrl="/projects/perfecttrainer.webp"
-          />
-        </div>
-
-        <div className="z-10">
-          <Projects
-            enterpriseName={t.projects.items.tourtrack.title}
-            appName={t.projects.items.tourtrack.text}
-            imageUrl="/projects/TourTrack.webp"
-          />
-        </div>
-
-        {/* decoracion */}
-        <div className="hidden md:flex absolute left-0 right-0 -bottom-16 justify-center items-center z-0">
-          <div className="bg-gray-300/20 dark:bg-gray-600/20 rounded-3xl h-[150px] w-[700px] flex items-end justify-center pb-5 animate-pulse backdrop-blur-sm">
-            <div className="bg-red-500 rounded-xl h-[15px] w-1/2" />
-          </div>
-        </div>
+      {/* PROYECTOS (Interactive 3D Cube) */}
+      <section className="w-full max-w-7xl px-5 md:px-10 mb-20">
+        <MyProjects />
       </section>
 
       <div id="skills" />
 
       {/* SKILLS */}
-      <section className="w-full max-w-7xl px-5 md:px-10 mt-36">
+      <section className="w-full max-w-7xl px-5 md:px-10 mt-36 rounded-none">
         <Skills />
       </section>
 
