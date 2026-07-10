@@ -78,7 +78,7 @@ export default function Navbar() {
 
         {/* Actions (Language, Theme, Mobile Toggle) */}
         <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
-          <div className="hidden sm:flex items-center bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-1">
+          <div className="sm:flex items-center bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-1">
             <Select />
           </div>
           
