@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PortfolioTranslationDictionarySchema",
+  "type": "object",
+  "required": [
+    "nav",
+    "welcome",
+    "subtitle",
+    "software",
+    "multimedia",
+    "companies",
+    "projects",
+    "skills",
+    "education",
+    "contact",
+    "footer"
+  ],
+  "properties": {
+    "nav": {
+      "type": "object",
+      "required": ["home", "experience", "software", "projects", "multimedia", "skills", "education", "contact"]
+    },
+    "multimedia": {
+      "type": "object",
+      "required": ["badge", "title1", "title2", "subtitle", "tabs", "filters", "videos", "images", "modal"]
+    }
+  }
+}

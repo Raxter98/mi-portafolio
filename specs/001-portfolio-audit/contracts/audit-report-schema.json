@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditReportSchema",
+  "type": "object",
+  "required": [
+    "technologyStack",
+    "architecture",
+    "findings",
+    "recommendations"
+  ],
+  "properties": {
+    "technologyStack": {
+      "type": "object",
+      "required": ["framework", "runtime", "language", "styling", "graphics"],
+      "properties": {
+        "framework": { "type": "string" },
+        "runtime": { "type": "string" },
+        "language": { "type": "string" },
+        "styling": { "type": "string" },
+        "graphics": { "type": "string" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "domain",
+          "severity",
+          "filePath",
+          "lineNumbers",
+          "evidence",
+          "impact",
+          "recommendedAction",
+          "estimatedComplexity"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "domain": { "type": "string" },
+          "severity": { "type": "string", "enum": ["HIGH", "MEDIUM", "LOW"] },
+          "filePath": { "type": "string" },
+          "lineNumbers": { "type": "string" },
+          "evidence": { "type": "string" },
+          "impact": { "type": "string" },
+          "recommendedAction": { "type": "string" },
+          "estimatedComplexity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["priority", "findingId", "title", "justification", "estimatedComplexity"],
+        "properties": {
+          "priority": { "type": "string", "enum": ["P1", "P2", "P3"] },
+          "findingId": { "type": "string" },
+          "title": { "type": "string" },
+          "justification": { "type": "string" },
+          "estimatedComplexity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] }
+        }
+      }
+    }
+  }
+}

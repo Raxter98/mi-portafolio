@@ -2,7 +2,9 @@
   "nav": {
     "home": "Inicio",
     "experience": "Experiencia",
-    "projects": "Mis proyectos",
+    "software": "Software",
+    "projects": "Proyectos",
+    "multimedia": "IA y Multimedia",
     "skills": "Habilidades",
     "education": "Educación",
     "contact": "Contáctame"
@@ -10,20 +12,170 @@
   "welcome": {
     "hi": "Hola,",
     "myNameIs": "Mi nombre es ",
-    "developer": "Desarrollador",
+    "developer": "Ingeniero Informático Multimedia",
     "downloadCv": "Descargar CV ↴",
-    "speaking": ["Software", " Web", " Móvil", " Full Stack"]
+    "speaking": ["Ingeniero Software", " Full Stack", " Web y Móvil", " Flujos IA"]
   },
   "subtitle": {
-    "text": "Habiendo acumulado más de cuatro años de experiencia en el diseño, desarrollo y mantenimiento de sitios web, sistemas en línea y aplicaciones móviles, he trabajado con una amplia gama de tecnologías. Mi versatilidad me ha permitido abordar proyectos en diversas plataformas y entornos, siempre esforzándome por brindar soluciones de alta calidad y alto rendimiento."
+    "text": "Como Ingeniero Informático Multimedia con más de cuatro años de experiencia profesional, me especializo en el diseño, desarrollo y despliegue de sistemas web escalables, aplicaciones móviles multiplataforma y flujos de automatización asistidos por IA. Mi formación me permite integrar arquitectura de software, automatización de procesos y producción digital para ofrecer soluciones de alto rendimiento."
+  },
+  "software": {
+    "badge": "Núcleo de Ingeniería",
+    "title1": "DESARROLLO DE SOFTWARE Y",
+    "title2": "ARQUITECTURA DE SISTEMAS",
+    "subtitle": "Construyendo aplicaciones robustas y escalables con prácticas modernas de ingeniería de software, arquitectura limpia y sistemas de tipo seguro.",
+    "pillars": {
+      "web": {
+        "title": "Aplicaciones Web",
+        "desc": "Aplicaciones de Página Única (SPAs) y portales con renderizado del lado del servidor creados con Next.js, React y TypeScript. Optimizados para capacidad de respuesta, accesibilidad (WCAG 2.2) y alto rendimiento en Core Web Vitals.",
+        "badges": ["Next.js", "React", "TypeScript", "Tailwind CSS", "App Router"]
+      },
+      "mobile": {
+        "title": "Desarrollo Móvil",
+        "desc": "Aplicaciones móviles multiplataforma para iOS y Android desarrolladas con React Native y Expo, con persistencia offline-first, sincronización en tiempo real y animaciones fluidas.",
+        "badges": ["React Native", "Expo", "iOS / Android", "Firebase", "Redux"]
+      },
+      "api": {
+        "title": "APIs y Microservicios",
+        "desc": "Servicios RESTful e integración de APIs backend utilizando Node.js, Express y Python. Diseñados con autenticación segura, validación de datos e integración de pasarelas de pago (WebPay, Stripe).",
+        "badges": ["Node.js", "Express", "Python", "APIs REST", "Auth JWT"]
+      },
+      "database": {
+        "title": "Bases de Datos y Nube",
+        "desc": "Modelado de bases de datos relacionales y NoSQL con MySQL, PostgreSQL, MongoDB y servicios en la nube de Firebase. Enfocado en optimización de consultas, diseño de índices e integridad de datos.",
+        "badges": ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "ORM / SQL"]
+      },
+      "sdd": {
+        "title": "Ingeniería y Prácticas SDD",
+        "desc": "Desarrollo Guiado por Especificaciones (SDD), flujos de trabajo con IA agente, control de versiones con Git, pipelines de pruebas automatizadas y despliegue continuo para arquitecturas sostenibles.",
+        "badges": ["Desarrollo SDD", "Git", "IA Agente", "CI/CD", "Quality Gates"]
+      },
+      "it": {
+        "title": "Soporte TI e Infraestructura",
+        "desc": "Mantenimiento preventivo de hardware y software, configuración de redes LAN, formateo, instalación de sistemas operativos (Linux y Windows) y soporte técnico.",
+        "badges": ["Redes LAN", "Hardware", "Linux / Windows", "Soporte TI"]
+      }
+    }
+  },
+  "multimedia": {
+    "badge": "Innovación Multidisciplinaria",
+    "title1": "FLUJOS DE IA Y",
+    "title2": "PRODUCCIÓN MULTIMEDIA",
+    "subtitle": "Aprovechando la IA generativa, la producción de video cinematográfico, la síntesis de voz y la automatización de procesos para complementar la ingeniería de software.",
+    "tabs": {
+      "video": "Producción de Video IA",
+      "image": "Creación de Imagen IA",
+      "audio": "Audio y Voz",
+      "automation": "IA y Automatización"
+    },
+    "subtabs": {
+      "videoGallery": "Galería de Video",
+      "imageGallery": "Galería de Imagen",
+      "overview": "Resumen General"
+    },
+    "filters": {
+      "all": "Ver Todo",
+      "ai_short_film": "Cortometrajes IA",
+      "cinematic": "Narrativa Cinematográfica",
+      "video_editing": "Edición de Video",
+      "promotional": "Videos Promocionales",
+      "ai_art": "Arte IA",
+      "concept_art": "Arte Conceptual",
+      "promotional_design": "Diseño Promocional",
+      "illustration": "Ilustración Digital"
+    },
+    "videos": {
+      "item1": {
+        "title": "La ley del intercambio equivalente: Cortometraje IA",
+        "desc": "Narrativa visual cinematográfica generada con Google Veo 3, con movimientos de cámara personalizados, corrección de color y posproducción."
+      },
+      "item2": {
+        "title": "Video promocional: Worldker",
+        "desc": "Video promocional de formato corto y ritmo rápido optimizado para visualización horizontal con animaciones de texto dinámicas, narración creada con ia y posproducción."
+      },
+      "item3": {
+        "title": "Video promocional 2: Worldker",
+        "desc": "Video promocional de formato corto y ritmo rápido optimizado para visualización horizontal con animaciones de texto dinámicas, narración creada con ia y posproducción."
+      }
+    },
+    "expandImage": "Expandir Imagen",
+    "highResNotice": "Imagen en Alta Resolución (3MB+ HD)",
+    "images": {
+      "car_traveling": {
+        "title": "Viaje Cinematográfico: Auto en Carretera",
+        "desc": "Visual atmosférico cinematográfico que captura un vehículo estilizado navegando por autopistas futuristas con iluminación dinámica y profundidad de cámara.",
+        "process": "Composición de cámara en Midjourney v6, prompts personalizados para iluminación atmosférica y gradación de color en Photoshop."
+      },
+      "future": {
+        "title": "Metrópolis Cyber Futurista",
+        "desc": "Arquitectura de ciencia ficción de alto concepto que representa un paisaje urbano futurista, infraestructura neón resplandeciente y diseño urbano avanzado.",
+        "process": "Generación en Flux 1.1 Pro combinada con flujos de nodos en ComfyUI y posprocesamiento en Lightroom."
+      },
+      "horror_movie": {
+        "title": "Fotograma Oscuro Atmosférico",
+        "desc": "Fotograma cinematográfico dramático con iluminación de suspenso, sombras profundas y estética de película de terror cinematográfico.",
+        "process": "Composición de escena oscura en Midjourney v6 con gradación de color de alto contraste y grano de película en posproducción."
+      },
+      "retro_sumer": {
+        "title": "Estética Retro Verano",
+        "desc": "Arte promocional vibrante de inspiración retro que combina una paleta nostálgica de verano, tonos de fotografía vintage y diseño digital moderno.",
+        "process": "Composición visual digital en Illustrator y Photoshop con superposición de texturas generadas por IA."
+      },
+      "wizard": {
+        "title": "Arte Conceptual: Hechicero Místico",
+        "desc": "Arte conceptual de fantasía detallado que muestra a un mago canalizando energía de hechizos elementales en un antiguo reino místico.",
+        "process": "Control de postura con SDXL ControlNet, efectos de iluminación de partículas personalizados y refinamiento en ComfyUI."
+      }
+    },
+    "items": {
+      "video": {
+        "title": "Generación y Edición de Video IA Cinematográfico",
+        "desc": "Creación de narrativa visual cinematográfica, generación de video asistida por IA (Runway, Luma, Pika), composición de tomas, corrección de color y edición de video en posproducción para medios promocionales.",
+        "badges": ["Runway Gen-2/Gen-3", "Pika", "Premiere Pro", "Corrección de Color", "Posproducción"]
+      },
+      "image": {
+        "title": "Generación de Imagen IA y Activos Digitales",
+        "desc": "Síntesis de activos visuales de alta resolución mediante Midjourney, Flux y flujos de trabajo con nodos en ComfyUI, diseñados para maquetas de interfaz, material de marca y gráficos de marketing digital.",
+        "badges": ["Midjourney", "Flux", "ComfyUI", "Photoshop", "Generación de Activos"]
+      },
+      "audio": {
+        "title": "Generación de Voz IA y Posproducción de Audio",
+        "desc": "Síntesis de locución realista con ElevenLabs, reducción de ruido de audio, mezcla de música de fondo y producción de voz localizada para contenido multimedia.",
+        "badges": ["ElevenLabs", "Síntesis de Audio", "Audition", "Locución", "Mezcla de Audio"]
+      },
+      "automation": {
+        "title": "Agentes de Desarrollo y Automatización de Flujos",
+        "desc": "Implementación de asistentes autónomos de código IA (Cursor, Antigravity, Claude Code), herramientas de agentes personalizadas, orquestación de tareas automatizadas y pipelines de Desarrollo Guiado por Especificaciones (SDD).",
+        "badges": ["Spec Kit (SDD)", "Agentes Autónomos", "Cursor / Antigravity", "Ingeniería de Prompts", "Automatización de Tareas"]
+      }
+    }
   },
   "skills": {
     "about": "Sobre Mí",
     "fullStack": "Desarrollador Full Stack",
     "mobileDev": "Desarrollador Móvil",
-    "description": "Con experiencia tanto como empleado como profesional independiente, he desarrollado una perspectiva integral de la industria y la flexibilidad para colaborar con diversos equipos y proyectos. Mi enfoque en lograr resultados, combinado con una fuerte pasión por el aprendizaje, me ha ayudado a sobresalir en mi carrera y lograr resultados exitosos. Como ingeniero informático, siempre apunté a la excelencia en mis cursos de programación, y mi dedicación es evidente en la calidad de mi trabajo y la satisfacción de aquellos con quienes trabajo.",
+    "description": "Con experiencia tanto como empleado como profesional independiente, he desarrollado una perspectiva integral de la industria y la flexibilidad para colaborar con diversos equipos y proyectos. Como Ingeniero Informático Multimedia, aplico sistemáticamente principios de código limpio, metodologías de ingeniería de software y diseño multidisciplinario.",
     "my": "Mis",
     "skillsTitle": "HABILIDADES"
+  },
+  "skillsGrouped": {
+    "title": "COMPETENCIAS TÉCNICAS POR DISCIPLINA",
+    "software": {
+      "title": "Ingeniería de Software y Móvil",
+      "desc": "Desarrollo full-stack, aplicaciones móviles, arquitectura de bases de datos y APIs REST."
+    },
+    "ai": {
+      "title": "IA y Automatización de Flujos",
+      "desc": "Herramientas de IA agente, Desarrollo Guiado por Especificaciones, ComfyUI y automatización."
+    },
+    "multimedia": {
+      "title": "Multimedia y Posproducción",
+      "desc": "Video cinematográfico IA, generación de voz, edición de audio y gráficos visuales."
+    },
+    "tools": {
+      "title": "Infraestructura y Herramientas",
+      "desc": "Mantenimiento de hardware, redes LAN, soporte Windows/Linux, control de versiones y despliegue en la nube."
+    }
   },
   "companies": {
     "title1": "EMPRESAS EN LAS QUE HE",
@@ -31,75 +183,75 @@
     "developer": "Desarrollador",
     "jobs": {
       "archbishopric": {
-        "position": "Web Master",
+        "position": "Web Master y Desarrollador de Software",
         "enterprise": "Arzobispado de La Serena",
         "date": "2022 (Febrero) - Presente",
-        "description": "Como desarrollador web master en el Arzobispado de La Serena, utilicé mis habilidades en React.js, Tailwind CSS y MySQL para diseñar, desarrollar y mantener aplicaciones web y móviles de alta calidad. Implementé soluciones innovadoras, creando interfaces interactivas y atractivas con estilos modernos y escalables. Manejando la lógica del servidor y la gestión de bases de datos con Express y MySQL, integré servicios de pago mediante WebPay y garanticé un rendimiento óptimo. Participé activamente en proyectos exitosos, demostrando mi capacidad para aprovechar tecnologías modernas y contribuir al éxito de iniciativas tecnológicas."
+        "description": "Como Web Master y Desarrollador de Software en el Arzobispado de La Serena, diseño, desarrollo y mantengo aplicaciones web y móviles utilizando React.js, Next.js, Tailwind CSS, Node.js y MySQL. Diseñé un sistema CMS/CRUD interno para la gestión de noticias y contenido multimedia, integré servicios de pago WebPay y gestioné la infraestructura del servidor e integridad de datos."
       },
       "freelance": {
-        "position": "Junior",
-        "enterprise": "Freelancer",
+        "position": "Desarrollador de Software y Web",
+        "enterprise": "Freelance",
         "date": "2020 (Enero) - 2022 (Febrero)",
-        "description": "Como desarrollador junior independiente, diseñé y optimicé soluciones web para emprendedores y startups utilizando tecnologías como React.js, Python, Node.js y MongoDB, enfocándome en construir interfaces eficientes y escalables. Desarrollé sitios estáticos con HTML/CSS y JavaScript, mejorando el SEO y el rendimiento, y gestioné la lógica del servidor colaborando en aplicaciones como un administrador de tareas, aprendiendo a solucionar errores en tiempo real y comunicar requerimientos técnicos claramente a los clientes. Cada proyecto fortaleció mi adaptabilidad y capacidad para entregar resultados con herramientas modernas, incluso bajo plazos ajustados y desafíos técnicos inesperados."
+        "description": "Como desarrollador independiente, diseñé y optimicé soluciones web y móviles full-stack para emprendedores y startups utilizando React.js, Python, Node.js y MongoDB. Desarrollé aplicaciones web optimizadas para SEO, APIs personalizadas, herramientas de gestión de tareas y plataformas de comercio electrónico con diseño responsivo moderno."
       },
       "midlevel": {
-        "position": "Mid-level Developer",
+        "position": "Ingeniero de Software Mid-level",
         "enterprise": "Independiente / Freelance",
         "date": "2022 - presente",
-        "description": "Como desarrollador mid-level, asumí proyectos más complejos y desafiantes, liderando la arquitectura técnica y asegurando las mejores prácticas en el desarrollo web y móvil moderno. Me enfoqué en construir aplicaciones escalables, de alto rendimiento y centradas en el usuario, aprovechando mis habilidades avanzadas en todo el stack para ofrecer soluciones robustas para diversos clientes."
+        "description": "Como ingeniero de software mid-level, lidero la arquitectura técnica y las mejores prácticas en proyectos de desarrollo web, móvil y automatización asistida por IA. Construyo aplicaciones escalables y de alto rendimiento utilizando React Native, Next.js, Node.js y flujos de trabajo de Desarrollo Guiado por Especificaciones."
       }
     }
   },
   "projects": {
-    "title1": "PROYECTOS EN LOS QUE HE",
-    "title2": "COLABORADO",
-    "myProjects": "Mis proyectos",
+    "title1": "PROYECTOS DESTACADOS Y",
+    "title2": "TRABAJO DE INGENIERÍA",
+    "myProjects": "Mis Proyectos",
     "items": {
       "arzobispado": {
         "title": "Sitio Web y CRUD Arzobispado de La Serena",
-        "text": "Actualicé y creé un nuevo sitio web para el Arzobispado de La Serena junto con un sistema interno de la empresa para crear, leer, actualizar y eliminar diversas secciones del sitio, incluidas noticias para el departamento periodístico de la institución."
+        "text": "Diseñé y desplegué un sitio web institucional moderno y un sistema de gestión interno a medida para publicación de noticias, programación de eventos y control de medios digitales."
       },
       "worldker": {
         "title": "Aplicación Móvil Worldker",
-        "text": "Una innovadora aplicación móvil diseñada para conectar profesionales con clientes en tiempo real. Desarrollada desde cero, cuenta con un sistema de emparejamiento dinámico y una interfaz de usuario altamente responsiva."
+        "text": "Una innovadora aplicación móvil bajo demanda que conecta profesionales con clientes. Desarrollada con React Native, base de datos en tiempo real de Firebase e interfaz multiplataforma."
       },
       "arzobispadoWeb": {
-        "title": "Arzobispado de La Serena",
-        "text": "Un sitio web institucional integral desarrollado para brindar noticias, recursos e información transparente a la comunidad, con un diseño altamente accesible y responsivo."
+        "title": "Portal Institucional Arzobispado",
+        "text": "Sitio web institucional integral desarrollado para brindar noticias, recursos e información transparente a la comunidad, con un diseño accesible y responsivo."
       },
       "arzobispadoCrud": {
         "title": "Sistema de Gestión del Arzobispado",
-        "text": "Un sistema interno CRUD a medida diseñado para gestionar de forma segura y eficiente el contenido digital de la institución, incluyendo artículos periodísticos y programación de eventos."
+        "text": "Sistema interno CRUD a medida diseñado para gestionar de forma segura contenido digital, artículos periodísticos y programación de eventos."
       },
       "alcaldia": {
-        "title": "Alcaldía de Medellín",
-        "text": "Sitio web dedicado a gestionar y organizar eventos culturales en Medellín, con roles personalizados para jurados y candidatos, optimizando todo el proceso del evento."
+        "title": "Plataforma de Eventos Alcaldía de Medellín",
+        "text": "Plataforma web dedicada a organizar eventos culturales en Medellín, con control de acceso basado en roles para jurados, candidatos y administradores."
       },
       "autovidrios": {
-        "title": "Auto Vidrios Pueblo Nuevo",
-        "text": "Sistema de gestión web integral creado para controlar citas, realizar seguimiento de inventario y ejecutar auditorías para empleados, clientes y administradores."
+        "title": "Sistema de Gestión Auto Vidrios",
+        "text": "Sistema de gestión web integral creado para controlar citas, realizar seguimiento de inventario y ejecutar auditorías para empleados y clientes."
       },
       "fiado": {
-        "title": "Fiado",
-        "text": "Aplicación Web Progresiva (PWA) que facilita las transferencias de dinero seguras entre roles personalizados y contactos internos asignados."
+        "title": "PWA Financiera Fiado",
+        "text": "Aplicación Web Progresiva (PWA) que facilita el seguimiento financiero seguro y transacciones entre usuarios con roles personalizados."
       },
       "jccrp": {
-        "title": "Distribuciones J.C.C.R.P.c.a.",
-        "text": "Sistema web local desarrollado para el control robusto de inventario y la designación precisa de rutas para la entrega de productos."
+        "title": "Sistema de Inventario Distribuciones J.C.C.R.P.",
+        "text": "Sistema web local desarrollado para el control de inventario y la designación precisa de rutas de entrega de productos."
       },
       "perfecttrainer": {
-        "title": "Perfect Trainer",
-        "text": "Aplicación móvil diseñada para entrenadores personales, que ofrece rutinas de ejercicios predefinidas o personalizadas para satisfacer las necesidades específicas de sus clientes."
+        "title": "Aplicación Móvil Perfect Trainer",
+        "text": "Aplicación móvil diseñada para entrenadores personales, que permite la creación de rutinas de ejercicio personalizadas y seguimiento de clientes."
       },
       "tourtrack": {
-        "title": "TourTrack",
-        "text": "Aplicación móvil nativa que permite a las agencias asignar nuevos tours turísticos en todo el mundo mientras gestionan de manera eficiente su red de contactos internos."
+        "title": "Aplicación Móvil Nativa TourTrack",
+        "text": "Aplicación móvil nativa que permite a las agencias turísticas asignar tours globales y gestionar redes de guías internos."
       }
     }
   },
   "education": {
     "title": "MI EDUCACIÓN",
-    "subtitle": "Universidad",
+    "subtitle": "Calificación Académica",
     "items": {
       "iacc": {
         "title": "Técnico de Nivel Superior en Informática",
@@ -113,9 +265,9 @@
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "¿Tienes alguna pregunta o sugerencia? No dudes en contactarme por los siguientes medios.",
+    "subtitle": "¿Tienes una idea de proyecto, consulta de software o propuesta de colaboración? No dudes en contactarme.",
     "infoTitle": "Información de Contacto",
-    "infoDesc": "Puedes contactarme directamente a través de mi correo electrónico, LinkedIn o WhatsApp.",
+    "infoDesc": "Puedes contactarme directamente a través de correo electrónico, LinkedIn o WhatsApp.",
     "email": "Correo electrónico",
     "linkedin": "LinkedIn"
   },

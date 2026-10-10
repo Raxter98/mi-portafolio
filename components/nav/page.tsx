@@ -34,7 +34,9 @@ export default function Navbar() {
   const navLinks = [
     { name: t.nav.home, id: "home" },
     { name: t.nav.experience, id: "about" },
+    { name: t.nav.software, id: "software" },
     { name: t.nav.projects, id: "projects" },
+    { name: t.nav.multimedia, id: "multimedia" },
     { name: t.nav.skills, id: "skills" },
     { name: t.nav.education, id: "education" },
     { name: t.nav.contact, id: "contact" },
@@ -54,6 +56,7 @@ export default function Navbar() {
         <button 
           onClick={() => scrollToSection("home")} 
           className="flex items-center flex-shrink-0 group focus:outline-none"
+          aria-label="Marcos Valero Logo - Inicio"
         >
           <img
             src="/logoMarcos.svg"
@@ -63,12 +66,12 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-2 xl:gap-4 flex-1 justify-center">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-3 flex-1 justify-center">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="px-4 py-2 text-sm font-semibold tracking-wide text-zinc-600 dark:text-zinc-300 hover:text-red-500 dark:hover:text-white transition-colors relative group focus:outline-none"
+              className="px-3 py-2 text-xs xl:text-sm font-semibold tracking-wide text-zinc-600 dark:text-zinc-300 hover:text-red-500 dark:hover:text-white transition-colors relative group focus:outline-none"
             >
               {link.name}
               <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4 rounded-full" />
@@ -77,7 +80,7 @@ export default function Navbar() {
         </nav>
 
         {/* Actions (Language, Theme, Mobile Toggle) */}
-        <div className="flex items-center gap-3 md:gap-5 flex-shrink-0">
+        <div className="flex items-center gap-3 md:gap-4 flex-shrink-0">
           <div className="sm:flex items-center bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-1">
             <Select />
           </div>
@@ -89,7 +92,7 @@ export default function Navbar() {
           <button
             className="lg:hidden p-2 -mr-2 text-zinc-800 dark:text-zinc-200 hover:text-red-500 transition-colors focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
+            aria-label={t.nav.home}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -99,7 +102,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div
         className={`lg:hidden absolute top-20 left-0 w-full bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-white/10 shadow-xl transition-all duration-300 ease-in-out origin-top overflow-hidden ${
-          isOpen ? "max-h-[400px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+          isOpen ? "max-h-[500px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
         <div className="flex flex-col items-center gap-2 px-6">
@@ -107,12 +110,12 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="w-full py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-400 hover:bg-zinc-50 dark:hover:bg-white/5 rounded-xl transition-colors focus:outline-none"
+              className="w-full py-2.5 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-400 hover:bg-zinc-50 dark:hover:bg-white/5 rounded-xl transition-colors focus:outline-none"
             >
               {link.name}
             </button>
           ))}
-          <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-white/10 w-full flex justify-center sm:hidden">
+          <div className="mt-2 pt-3 border-t border-zinc-200 dark:border-white/10 w-full flex justify-center sm:hidden">
             <div className="bg-zinc-100/50 dark:bg-zinc-900/50 rounded-lg p-2">
               <Select />
             </div>

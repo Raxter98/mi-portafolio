@@ -55,6 +55,14 @@ const ThreeHero = dynamic(() => import("@/components/threeHero/page"), {
   ssr: false,
 });
 
+const SoftwareSection = dynamic(() => import("@/components/software/page"), {
+  ssr: false,
+});
+
+const MultimediaSection = dynamic(() => import("@/components/multimedia/page"), {
+  ssr: false,
+});
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -65,19 +73,19 @@ export default function Home() {
       <div id="home" />
 
       {/* HERO */}
-      <section className="relative min-h-screen w-full overflow-hidden px-5 pt-28 md:px-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(239,68,68,0.28),transparent_34%),linear-gradient(135deg,#09090b_0%,#111113_50%,#18181b_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-zinc-950 to-transparent" />
+      <section className="relative min-h-screen w-full overflow-hidden px-5 pt-28 md:px-10 bg-white dark:bg-zinc-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(239,68,68,0.1),transparent_34%),linear-gradient(135deg,#f8fafc_0%,#f1f5f9_50%,#e2e8f0_100%)] dark:bg-[radial-gradient(circle_at_72%_28%,rgba(239,68,68,0.28),transparent_34%),linear-gradient(135deg,#09090b_0%,#111113_50%,#18181b_100%)] transition-colors duration-500" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white to-transparent dark:from-zinc-950 dark:to-transparent" />
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] w-full max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-[0.92fr_1.08fr]">
           <div className="max-w-3xl">
-          <Welcome />
-          <Subtitle />
+            <Welcome />
+            <Subtitle />
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="mailto:marcos@marcosvalero.com"
-                className="w-fit rounded-md bg-red-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-950/30 transition hover:bg-red-400"
+                className="w-fit rounded-xl bg-red-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-all hover:bg-red-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-red-500"
               >
                 marcos@marcosvalero.com
               </a>
@@ -85,7 +93,7 @@ export default function Home() {
                 href="https://wa.me/56935264725"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit rounded-md border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-red-300 hover:bg-white/15"
+                className="w-fit rounded-xl border border-zinc-300 dark:border-white/20 bg-zinc-100 dark:bg-white/10 px-6 py-3 text-sm font-bold text-zinc-700 dark:text-white backdrop-blur transition-all hover:border-red-400 hover:bg-white dark:hover:bg-white/15 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-zinc-400"
               >
                 WhatsApp
               </a>
@@ -105,17 +113,17 @@ export default function Home() {
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-red-400">
           Experiencia
         </p>
-        <h1 className="text-zinc-900 dark:text-white text-3xl md:text-5xl flex flex-wrap">
-          <span className="bg-red-500 px-3 py-2">
+        <h2 className="text-zinc-900 dark:text-white text-3xl md:text-5xl flex flex-wrap font-bold">
+          <span className="bg-red-500 px-3 py-2 text-white rounded">
             {t.companies.title1}
           </span>
-        </h1>
+        </h2>
 
-        <h1 className="text-zinc-900 dark:text-white text-3xl md:text-5xl mt-4">
+        <h3 className="text-zinc-900 dark:text-white text-3xl md:text-5xl mt-4 font-bold">
           <span className="border-b-2 border-red-500">
             {t.companies.title2}
           </span>
-        </h1>
+        </h3>
       </section>
 
       {/* EXPERIENCIA */}
@@ -198,17 +206,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SOFTWARE DEVELOPMENT SECTION */}
+      <SoftwareSection />
+
       <div id="projects" />
 
-      {/* PROYECTOS (Interactive 3D Cube) */}
-      <section className="w-full max-w-7xl px-5 md:px-10 mb-20">
+      {/* PROYECTOS (Interactive 3D Carousel) */}
+      <section className="w-full max-w-7xl px-5 md:px-10 mb-10">
         <MyProjects />
       </section>
+
+      {/* AI & MULTIMEDIA SHOWCASE SECTION */}
+      <MultimediaSection />
 
       <div id="skills" />
 
       {/* SKILLS */}
-      <section className="w-full max-w-7xl px-5 md:px-10 mt-36 rounded-none">
+      <section className="w-full max-w-7xl px-5 md:px-10 mt-28 rounded-none">
         <Skills />
       </section>
 

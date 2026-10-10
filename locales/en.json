@@ -2,7 +2,9 @@
   "nav": {
     "home": "Home",
     "experience": "Experience",
-    "projects": "My projects",
+    "software": "Software",
+    "projects": "Projects",
+    "multimedia": "AI & Multimedia",
     "skills": "Skills",
     "education": "Education",
     "contact": "Contact me"
@@ -10,96 +12,246 @@
   "welcome": {
     "hi": "Hi,",
     "myNameIs": "My name is ",
-    "developer": "Developer",
+    "developer": "Multimedia Computer Engineer",
     "downloadCv": "Download CV ↴",
-    "speaking": ["Software", " Web", " Mobile", " Full Stack"]
+    "speaking": ["Software Engineer", " Full Stack", " Web & Mobile", " AI Workflows"]
   },
   "subtitle": {
-    "text": "Having accumulated over four years of experience in designing, developing, and maintaining websites, online systems, and mobile applications, I have worked with a wide range of technologies. My versatility has enabled me to tackle projects across various platforms and environments, always striving to provide high-quality and high-performance solutions"
+    "text": "As a Multimedia Computer Engineer with over four years of professional experience, I specialize in architecting, developing, and deploying scalable web systems, cross-platform mobile applications, and AI-assisted automation workflows. My engineering background enables me to bridge software architecture, process automation, and creative digital production to deliver high-performance solutions."
+  },
+  "software": {
+    "badge": "Engineering Core",
+    "title1": "SOFTWARE DEVELOPMENT &",
+    "title2": "SYSTEM ARCHITECTURE",
+    "subtitle": "Building robust, scalable applications with modern software engineering practices, clean architecture, and type-safe systems.",
+    "pillars": {
+      "web": {
+        "title": "Web Applications",
+        "desc": "Single Page Applications (SPAs) and Server-Side Rendered portals built with Next.js, React, and TypeScript. Optimized for responsiveness, accessibility (WCAG 2.2), and high Core Web Vitals performance.",
+        "badges": ["Next.js", "React", "TypeScript", "Tailwind CSS", "App Router"]
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "desc": "Cross-platform mobile applications for iOS and Android powered by React Native and Expo, featuring offline-first persistence, real-time sync, and fluid native animations.",
+        "badges": ["React Native", "Expo", "iOS / Android", "Firebase", "Redux"]
+      },
+      "api": {
+        "title": "APIs & Microservices",
+        "desc": "RESTful services and backend API integration using Node.js, Express, and Python. Designed for secure authentication, clean data validation, and payment gateway integrations (WebPay, Stripe).",
+        "badges": ["Node.js", "Express", "Python", "REST APIs", "JWT Auth"]
+      },
+      "database": {
+        "title": "Databases & Cloud",
+        "desc": "Relational and NoSQL database modeling with MySQL, PostgreSQL, MongoDB, and Firebase Cloud Services. Focused on query optimization, index design, and data integrity.",
+        "badges": ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "ORM / SQL"]
+      },
+      "sdd": {
+        "title": "Engineering & SDD Practices",
+        "desc": "Spec-Driven Development (SDD), agentic AI workflows, version control with Git, automated testing pipelines, and continuous deployment for maintainable software architecture.",
+        "badges": ["Spec-Driven Dev", "Git", "Agentic AI", "CI/CD", "Quality Gates"]
+      },
+      "it": {
+        "title": "IT Support & Infrastructure",
+        "desc": "Preventive hardware and software maintenance, LAN network configuration, formatting, OS installation (Linux and Windows), and comprehensive technical support.",
+        "badges": ["LAN Networks", "Hardware", "Linux / Windows", "IT Support"]
+      }
+    }
+  },
+  "multimedia": {
+    "badge": "Multidisciplinary Innovation",
+    "title1": "AI WORKFLOWS &",
+    "title2": "MULTIMEDIA PRODUCTION",
+    "subtitle": "Leveraging generative AI, cinematic video production, audio synthesis, and process automation to complement software engineering.",
+    "tabs": {
+      "video": "AI Video Production",
+      "image": "AI Image Creation",
+      "audio": "Audio & Voice",
+      "automation": "AI & Automation"
+    },
+    "subtabs": {
+      "videoGallery": "Video Gallery",
+      "imageGallery": "Image Gallery",
+      "overview": "Overview"
+    },
+    "filters": {
+      "all": "All",
+      "ai_short_film": "AI Short Films",
+      "cinematic": "Cinematic Storytelling",
+      "video_editing": "Video Editing",
+      "promotional": "Promotional Videos",
+      "ai_art": "AI Art",
+      "concept_art": "Concept Art",
+      "promotional_design": "Promotional Design",
+      "illustration": "Digital Illustration"
+    },
+    "videos": {
+      "item1": {
+        "title": "Cinematic AI Video Showcase",
+        "desc": "Cinematic visual storytelling generated with Runway Gen-3 and Pika, featuring custom camera movements, color correction, and post-production."
+      },
+      "item2": {
+        "title": "Promotional video: Worldker",
+        "desc": "Fast-paced, short-form promotional video optimized for horizontal viewing, featuring dynamic text animations, AI-generated narration, and post-production."
+      },
+      "item3": {
+        "title": "Promotional video: Worldker",
+        "desc": "Fast-paced, short-form promotional video optimized for horizontal viewing, featuring dynamic text animations, AI-generated narration, and post-production."
+      }
+    },
+    "expandImage": "Expand Image",
+    "highResNotice": "High-Resolution Image (3MB+ HD)",
+    "images": {
+      "car_traveling": {
+        "title": "Cinematic Journey: Traveling Car",
+        "desc": "Cinematic atmosphere visual capturing a sleek vehicle navigating futuristic highways with dynamic lighting and camera depth.",
+        "process": "Midjourney v6 camera composition, custom prompting for atmospheric lighting, and color grading in Photoshop."
+      },
+      "future": {
+        "title": "Future Cyber Metropolis",
+        "desc": "High-concept sci-fi architecture depicting futuristic cityscape, glowing neon infrastructure, and advanced urban design.",
+        "process": "Flux 1.1 Pro generation combined with ComfyUI node workflows and Lightroom post-processing."
+      },
+      "horror_movie": {
+        "title": "Atmospheric Dark Film Frame",
+        "desc": "Dramatic cinematic frame featuring suspenseful lighting, deep shadows, and cinematic horror film aesthetic.",
+        "process": "Midjourney v6 dark scene composition with high-contrast color grading and film grain post-production."
+      },
+      "retro_sumer": {
+        "title": "Retro Summer Aesthetics",
+        "desc": "Vibrant retro-inspired promotional artwork blending nostalgic summer palette, vintage photography tones, and modern digital design.",
+        "process": "Digital visual composition in Illustrator & Photoshop with custom AI-generated texture overlays."
+      },
+      "wizard": {
+        "title": "Mystical Sorcerer Concept Art",
+        "desc": "Detailed fantasy concept art showcasing a wizard casting elemental spell energy in an ancient mystical realm.",
+        "process": "SDXL ControlNet pose control, custom particle lighting effects, and ComfyUI workflow refinement."
+      }
+    },
+    "items": {
+      "video": {
+        "title": "Cinematic AI Video Generation & Editing",
+        "desc": "Creating cinematic visual storytelling, AI video generation (Runway, Luma, Pika), shot composition, color grading, and post-production video editing for promotional media.",
+        "badges": ["Runway Gen-2/Gen-3", "Pika", "Premiere Pro", "Color Grading", "Post-Production"]
+      },
+      "image": {
+        "title": "AI Image Generation & Digital Assets",
+        "desc": "High-resolution visual asset synthesis using Midjourney, Flux, and ComfyUI node workflows, tailored for UI mockups, brand collateral, and digital marketing graphics.",
+        "badges": ["Midjourney", "Flux", "ComfyUI", "Photoshop", "Asset Generation"]
+      },
+      "audio": {
+        "title": "AI Voice Generation & Audio Post-Production",
+        "desc": "Realistic voiceover synthesis with ElevenLabs, audio noise reduction, background music mixing, and localized voice production for multimedia content.",
+        "badges": ["ElevenLabs", "Audio Synthesis", "Audition", "Voiceover", "Audio Mixing"]
+      },
+      "automation": {
+        "title": "Development Agents & Workflow Automation",
+        "desc": "Implementing autonomous AI coding assistants (Cursor, Antigravity, Claude Code), custom agentic tools, automated task orchestration, and Spec-Driven Development (SDD) pipelines.",
+        "badges": ["Spec Kit (SDD)", "Autonomous Agents", "Cursor / Antigravity", "Prompt Engineering", "Task Automation"]
+      }
+    }
   },
   "skills": {
     "about": "About",
     "fullStack": "Full Stack Developer",
     "mobileDev": "Mobile Developer",
-    "description": "With experience both as an employee and a freelancer, I have developed a well-rounded perspective on the industry and the flexibility to collaborate with diverse teams and projects. My focus on achieving results, combined with a strong passion for learning, has helped me excel in my career and drive successful outcomes. As a computer engineer, I consistently aimed for excellence in my programming courses, and my dedication is evident in the quality of my work and the satisfaction of those I work with.",
+    "description": "With experience both as an employee and a freelancer, I have developed a well-rounded perspective on the industry and the flexibility to collaborate with diverse teams and projects. My focus on achieving results, combined with a strong passion for learning, has helped me excel in my career and drive successful outcomes. As a Multimedia Computer Engineer, I systematically apply clean code principles, software engineering methodologies, and multidisciplinary design.",
     "my": "My",
     "skillsTitle": "SKILLS"
   },
+  "skillsGrouped": {
+    "title": "TECHNICAL COMPETENCIES BY DISCIPLINE",
+    "software": {
+      "title": "Software Engineering & Mobile",
+      "desc": "Full-stack development, mobile apps, database architecture, and REST APIs."
+    },
+    "ai": {
+      "title": "AI & Workflow Automation",
+      "desc": "Agentic AI tools, Spec-Driven Development, ComfyUI, and process automation."
+    },
+    "multimedia": {
+      "title": "Multimedia & Post-Production",
+      "desc": "Cinematic AI video, voice generation, audio editing, and visual graphics."
+    },
+    "tools": {
+      "title": "Infrastructure & Tools",
+      "desc": "Hardware maintenance, LAN networking, Windows/Linux support, version control, and cloud deployment."
+    }
+  },
   "companies": {
-    "title1": "COMPANIES IN WHICH HAVE",
+    "title1": "COMPANIES IN WHICH I HAVE",
     "title2": "COLLABORATED",
     "developer": "Developer",
     "jobs": {
       "archbishopric": {
-        "position": "Web Master",
+        "position": "Web Master & Software Developer",
         "enterprise": "Archbishopric of La Serena",
         "date": "2022 (February) - Present",
-        "description": "As a web master developer at Archbishopric of La Serena, a prominent technology development company, I utilized my skills in React.js, Tailwind CSS, MySQL, to design, develop, and maintain high-quality web and mobile applications. I implemented innovative solutions, creating interactive and engaging interfaces with modern and scalable styles. Handling server logic and database management with Express and MySQL, I integrated payment services using WebPay and ensured optimal performance. At Archbishopric of La Serena, I actively participated in successful projects, demonstrating my ability to leverage modern technologies and contribute to the success of technological initiatives."
+        "description": "As Web Master and Software Developer at Archbishopric of La Serena, I design, develop, and maintain high-quality web and mobile applications using React.js, Next.js, Tailwind CSS, Node.js, and MySQL. I engineered an internal CMS/CRUD system for news and multimedia management, integrated WebPay payment services, and managed server infrastructure and database integrity."
       },
       "freelance": {
-        "position": "Junior",
-        "enterprise": "Freelancer",
+        "position": "Software & Web Developer",
+        "enterprise": "Freelance",
         "date": "2020 (January) - 2022 (February)",
-        "description": "As a junior freelance developer, I designed and optimized web solutions for entrepreneurs and startups using technologies like React.js, Python, Node.js, and MongoDB, focusing on building efficient and scalable interfaces. I developed static sites with HTML/CSS and JavaScript, enhancing SEO and performance, and managed server logic while collaborating on applications such as a task manager, learning to troubleshoot real-time errors and communicate technical requirements clearly to clients. Every project, from e-commerce platforms to basic APIs, strengthened my adaptability and ability to deliver results with modern tools, even under tight deadlines and unexpected technical challenges."
+        "description": "As a freelance developer, I designed and optimized full-stack web and mobile solutions for entrepreneurs and startups using React.js, Python, Node.js, and MongoDB. Developed SEO-optimized web applications, custom APIs, task management tools, and e-commerce platforms with efficient databases and modern responsive design."
       },
       "midlevel": {
-        "position": "Mid-level Developer",
+        "position": "Mid-level Software Engineer",
         "enterprise": "Independent / Freelance",
         "date": "2022 - present",
-        "description": "As a mid-level developer, I took on more complex and challenging projects, leading the technical architecture and ensuring best practices in modern web and mobile development. I focused on building scalable, performant, and user-centric applications, leveraging my advanced skills in the full stack to deliver robust solutions for diverse clients."
+        "description": "As a mid-level software engineer, I lead technical architecture and best practices across modern web, mobile, and AI-assisted automation projects. I build scalable, performant, and user-centric applications, leveraging React Native, Next.js, Node.js, and Spec-Driven Development workflows."
       }
     }
   },
   "projects": {
-    "title1": "PROJECTS IN WHICH I HAVE",
-    "title2": "COLLABORATED",
-    "myProjects": "My projects",
+    "title1": "FEATURED PROJECTS &",
+    "title2": "ENGINEERING WORK",
+    "myProjects": "My Projects",
     "items": {
       "arzobispado": {
         "title": "Website & CRUD Archbishopric of La Serena",
-        "text": "I updated and created a new website for the Archbishopric of La Serena along with an internal business system to create, read, update and delete various sections of the site including news for the institution's journalistic department."
+        "text": "Designed and deployed a modern institutional website and bespoke internal management system for news publishing, event scheduling, and digital media control."
       },
       "worldker": {
         "title": "Worldker Mobile App",
-        "text": "An innovative on-demand mobile application designed to seamlessly connect professionals with service seekers. Built from the ground up, featuring real-time matching and a responsive UI/UX."
+        "text": "An innovative on-demand mobile application connecting professionals with service seekers. Built with React Native, Firebase real-time database, and responsive cross-platform UI."
       },
       "arzobispadoWeb": {
-        "title": "Archdiocese of La Serena",
+        "title": "Archdiocese Institutional Portal",
         "text": "A comprehensive institutional website developed to provide news, resources, and transparent information to the community, featuring a highly accessible and responsive design."
       },
       "arzobispadoCrud": {
         "title": "Archdiocese Management System",
-        "text": "A bespoke internal CRUD (Create, Read, Update, Delete) system engineered to securely manage the institution's digital content, including journalistic articles and event scheduling."
+        "text": "A bespoke internal CRUD system engineered to securely manage digital content, journalistic articles, and event scheduling."
       },
       "alcaldia": {
-        "title": "Town Hall Medellin",
-        "text": "A dedicated website designed to manage and organize cultural events in Medellin, featuring tailored roles for jurors and candidates to streamline the entire event process."
+        "title": "Town Hall Medellin Event Platform",
+        "text": "A dedicated web platform designed to organize cultural events in Medellin, featuring tailored role-based access for jurors, candidates, and administrators."
       },
       "autovidrios": {
-        "title": "Auto Vidrios Pueblo Nuevo",
-        "text": "A comprehensive web-based management system built to control appointments, track inventory, and conduct audits for employees, clients, and managers."
+        "title": "Auto Vidrios Management System",
+        "text": "A comprehensive web management system built to control appointment scheduling, track inventory, and conduct audits for employees and clients."
       },
       "fiado": {
-        "title": "Fiado",
-        "text": "A Progressive Web App (PWA) facilitating seamless money transfers between customized roles and managed internal contacts."
+        "title": "Fiado Financial PWA",
+        "text": "A Progressive Web App (PWA) facilitating seamless financial tracking and peer transactions between customized roles and managed contact networks."
       },
       "jccrp": {
-        "title": "Distribuciones J.C.C.R.P.c.a.",
-        "text": "A local web system developed for robust inventory control and the precise designation of delivery routes for products."
+        "title": "Distribuciones J.C.C.R.P. Inventory System",
+        "text": "A local web system developed for robust inventory control and the precise designation of product delivery routes."
       },
       "perfecttrainer": {
-        "title": "Perfect Trainer",
-        "text": "A mobile application tailored for personal trainers, offering predefined or personalized exercise routines tailored to meet the specific needs of their clients."
+        "title": "Perfect Trainer Mobile App",
+        "text": "A mobile application tailored for personal trainers, offering custom exercise routine creation and client progress tracking."
       },
       "tourtrack": {
-        "title": "TourTrack",
-        "text": "A native mobile application that allows agencies to assign new tourist tours globally while efficiently managing their internal contact network."
+        "title": "TourTrack Native Mobile App",
+        "text": "A native mobile application enabling tourism agencies to assign global tours while managing internal guide networks efficiently."
       }
     }
   },
   "education": {
     "title": "MY EDUCATION",
-    "subtitle": "College",
+    "subtitle": "Academic Qualification",
     "items": {
       "iacc": {
         "title": "Higher Level Technician in Computer Science",
@@ -113,9 +265,9 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Do you have any questions or suggestions? Don't hesitate to contact me through the following means.",
+    "subtitle": "Do you have a project idea, software inquiry, or collaboration offer? Feel free to reach out directly.",
     "infoTitle": "Contact Information",
-    "infoDesc": "You can contact me directly through email, LinkedIn, or WhatsApp.",
+    "infoDesc": "Reach me via email, LinkedIn, or WhatsApp.",
     "email": "Email",
     "linkedin": "LinkedIn"
   },

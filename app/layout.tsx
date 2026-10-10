@@ -17,8 +17,23 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Marcos Valero",
-  description: "If you need a developer, contact me",
+  title: "Marcos Valero | Multimedia Computer Engineer & Software Developer",
+  description: "Personal Portfolio of Marcos Valero — Multimedia Computer Engineer specializing in web & mobile development, software architecture, AI-assisted workflows, and process automation.",
+  keywords: ["Marcos Valero", "Multimedia Computer Engineer", "Software Developer", "Full Stack", "React Native", "Next.js", "AI Workflows", "Spec-Driven Development"],
+  authors: [{ name: "Marcos Valero" }],
+  openGraph: {
+    title: "Marcos Valero | Multimedia Computer Engineer & Software Developer",
+    description: "Architecting scalable web apps, mobile solutions, AI workflows, and multimedia engineering.",
+    url: "https://marcosvalero.com",
+    siteName: "Marcos Valero Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marcos Valero | Multimedia Computer Engineer",
+    description: "Full-Stack Software Development, AI Workflows & Multimedia Production.",
+  },
 };
 
 export default function RootLayout({
