@@ -207,6 +207,30 @@
     "title1": "PROYECTOS DESTACADOS Y",
     "title2": "TRABAJO DE INGENIERÍA",
     "myProjects": "Mis Proyectos",
+    "subtitle": "Exploración interactiva de proyectos destacados en desarrollo móvil, plataformas web y sistemas empresariales.",
+    "showcase": {
+      "badge": "Portafolio de Ingeniería",
+      "categories": {
+        "all": "Todos",
+        "mobile": "Apps Móviles",
+        "web": "Plataformas Web",
+        "enterprise_pwa": "Sistemas y PWAs"
+      },
+      "actions": {
+        "viewDetails": "Ver Detalles",
+        "watchVideo": "Ver Demostración",
+        "stopVideo": "Detener Video",
+        "closeModal": "Cerrar",
+        "prevProject": "Proyecto Anterior",
+        "nextProject": "Proyecto Siguiente"
+      },
+      "meta": {
+        "technologies": "Tecnologías y Herramientas",
+        "overview": "Resumen del Proyecto",
+        "projectNumber": "Proyecto",
+        "of": "de"
+      }
+    },
     "items": {
       "arzobispado": {
         "title": "Sitio Web y CRUD Arzobispado de La Serena",

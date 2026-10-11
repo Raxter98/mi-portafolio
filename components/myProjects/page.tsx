@@ -1,365 +1,244 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
-import dynamic from "next/dynamic";
-
-const ProjectCube = dynamic(() => import("../ProjectCube/page"), { ssr: false });
-
-interface Project {
-  title: string;
-  text: string;
-  imageUrl: string;
-  technologies: string[];
-  video?: string;
-}
+import { PROJECTS_DATA, ProjectCategory } from "./projectsData";
+import { ProjectSpotlightStage, LocalizedProject } from "./ProjectSpotlightStage";
+import { ProjectDeck } from "./ProjectDeck";
+import { ProjectFilters, CategoryFilterItem } from "./ProjectFilters";
+import { ProjectDetailModal } from "./ProjectDetailModal";
 
 const MyProjects = () => {
   const { t } = useTranslation();
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
-  // We memoize the projects array based on translations so it updates on language switch
-  // But ProjectCube uses an empty dependency array for WebGL initialization to prevent reloading textures.
-  const projects: Project[] = [
-    {
-      title: t.projects.items.worldker.title,
-      text: t.projects.items.worldker.text,
-      imageUrl: "/worldker.png",
-      technologies: ["React Native", "Firebase", "i18n", "MySQL", "Git"],
-      video: "/video2.mp4",
-    },
-    {
-      title: t.projects.items.arzobispadoWeb.title,
-      text: t.projects.items.arzobispadoWeb.text,
-      imageUrl: "/arzobispado.webp",
-      technologies: ["React", "Next.js", "CSS", "SEO"],
-    },
-    {
-      title: t.projects.items.arzobispadoCrud.title,
-      text: t.projects.items.arzobispadoCrud.text,
-      imageUrl: "/crud.webp",
-      technologies: ["Node.js", "MySQL", "Express", "React"],
-    },
-    {
-      title: t.projects.items.alcaldia.title,
-      text: t.projects.items.alcaldia.text,
-      imageUrl: "/projects/Alcaldia.webp",
-      technologies: ["React", "Node.js", "PostgreSQL"],
-    },
-    {
-      title: t.projects.items.autovidrios.title,
-      text: t.projects.items.autovidrios.text,
-      imageUrl: "/projects/AutoVidrios.webp",
-      technologies: ["React", "Node.js"],
-    },
-    {
-      title: t.projects.items.fiado.title,
-      text: t.projects.items.fiado.text,
-      imageUrl: "/projects/Fiado.webp",
-      technologies: ["PWA", "React", "Node.js"],
-    },
-    {
-      title: t.projects.items.jccrp.title,
-      text: t.projects.items.jccrp.text,
-      imageUrl: "/projects/Jccrp.webp",
-      technologies: ["React", "Node.js"],
-    },
-    {
-      title: t.projects.items.perfecttrainer.title,
-      text: t.projects.items.perfecttrainer.text,
-      imageUrl: "/projects/perfecttrainer.webp",
-      technologies: ["React Native", "Firebase", "Redux"],
-    },
-    {
-      title: t.projects.items.tourtrack.title,
-      text: t.projects.items.tourtrack.text,
-      imageUrl: "/projects/TourTrack.webp",
-      technologies: ["React Native", "Firebase"],
+  const [activeProjectId, setActiveProjectId] = useState<string>("worldker");
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("all");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
+
+  // Reduced motion media query listener
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      setPrefersReducedMotion(mediaQuery.matches);
+      const listener = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+      mediaQuery.addEventListener("change", listener);
+      return () => mediaQuery.removeEventListener("change", listener);
     }
-  ];
+  }, []);
 
-  const selectedProject = projects[selectedIndex] || projects[0];
+  // Map raw catalog to localized project records
+  const localizedProjects: LocalizedProject[] = useMemo(() => {
+    return PROJECTS_DATA.map((record, index) => {
+      const itemKey = record.id as keyof typeof t.projects.items;
+      const translation = t.projects?.items?.[itemKey] as { title?: string; text?: string } | undefined;
 
-  const handleSelectProject = useCallback((index: number) => {
-    setSelectedIndex(index);
+      const title = translation?.title || record.id;
+      const description = translation?.text || "";
+
+      let categoryLabel = "Proyecto";
+      if (record.category === "mobile") {
+        categoryLabel = t.projects?.showcase?.categories?.mobile || "Apps Móviles";
+      } else if (record.category === "web") {
+        categoryLabel = t.projects?.showcase?.categories?.web || "Plataformas Web";
+      } else if (record.category === "enterprise_pwa") {
+        categoryLabel = t.projects?.showcase?.categories?.enterprise_pwa || "Sistemas y PWAs";
+      }
+
+      return {
+        ...record,
+        title,
+        description,
+        categoryLabel,
+        indexString: String(index + 1).padStart(2, "0"),
+      };
+    });
+  }, [t]);
+
+  // Compute categories array with live counts
+  const categories: CategoryFilterItem[] = useMemo(() => {
+    const allCount = localizedProjects.length;
+    const mobileCount = localizedProjects.filter((p) => p.category === "mobile").length;
+    const webCount = localizedProjects.filter((p) => p.category === "web").length;
+    const enterpriseCount = localizedProjects.filter((p) => p.category === "enterprise_pwa").length;
+
+    return [
+      {
+        id: "all",
+        label: t.projects?.showcase?.categories?.all || "Todos",
+        count: allCount,
+        ariaLabel: `Ver todos los proyectos (${allCount})`,
+      },
+      {
+        id: "mobile",
+        label: t.projects?.showcase?.categories?.mobile || "Apps Móviles",
+        count: mobileCount,
+        ariaLabel: `Ver aplicaciones móviles (${mobileCount})`,
+      },
+      {
+        id: "web",
+        label: t.projects?.showcase?.categories?.web || "Plataformas Web",
+        count: webCount,
+        ariaLabel: `Ver plataformas web (${webCount})`,
+      },
+      {
+        id: "enterprise_pwa",
+        label: t.projects?.showcase?.categories?.enterprise_pwa || "Sistemas y PWAs",
+        count: enterpriseCount,
+        ariaLabel: `Ver sistemas empresariales y PWAs (${enterpriseCount})`,
+      },
+    ];
+  }, [localizedProjects, t]);
+
+  // Filter projects by active category
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === "all") return localizedProjects;
+    return localizedProjects.filter((p) => p.category === selectedCategory);
+  }, [localizedProjects, selectedCategory]);
+
+  // Determine currently spotlighted project
+  const currentProject = useMemo(() => {
+    const found = filteredProjects.find((p) => p.id === activeProjectId);
+    return found || filteredProjects[0] || localizedProjects[0];
+  }, [filteredProjects, activeProjectId, localizedProjects]);
+
+  const currentIndex = useMemo(() => {
+    const idx = filteredProjects.findIndex((p) => p.id === currentProject.id);
+    return idx >= 0 ? idx : 0;
+  }, [filteredProjects, currentProject]);
+
+  // Select category and auto-synchronize active project
+  const handleSelectCategory = useCallback(
+    (category: ProjectCategory) => {
+      setSelectedCategory(category);
+
+      const targetSubset =
+        category === "all"
+          ? localizedProjects
+          : localizedProjects.filter((p) => p.category === category);
+
+      if (targetSubset.length > 0 && !targetSubset.some((p) => p.id === activeProjectId)) {
+        setActiveProjectId(targetSubset[0].id);
+      }
+    },
+    [localizedProjects, activeProjectId]
+  );
+
+  // Navigation handlers
+  const handleSelectProject = useCallback((id: string) => {
+    setActiveProjectId(id);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    const prevIdx = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
+    const prevProject = filteredProjects[prevIdx];
+    if (prevProject) {
+      setActiveProjectId(prevProject.id);
+    }
+  }, [currentIndex, filteredProjects]);
+
+  const handleNext = useCallback(() => {
+    const nextIdx = (currentIndex + 1) % filteredProjects.length;
+    const nextProject = filteredProjects[nextIdx];
+    if (nextProject) {
+      setActiveProjectId(nextProject.id);
+    }
+  }, [currentIndex, filteredProjects]);
+
+  const handleOpenDetails = useCallback(() => {
     setIsModalOpen(true);
-    setIsVideoPlaying(false);
   }, []);
 
-  const handlePrev = () => {
-    const prev = (selectedIndex - 1 + projects.length) % projects.length;
-    setSelectedIndex(prev);
-    setIsVideoPlaying(false);
-  };
-
-  const handleNext = () => {
-    const next = (selectedIndex + 1) % projects.length;
-    setSelectedIndex(next);
-    setIsVideoPlaying(false);
-  };
-
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-    setIsVideoPlaying(false);
-  };
-
-  useEffect(() => {
-    if (videoRef.current && isVideoPlaying && selectedProject.video) {
-      videoRef.current.load();
-      videoRef.current.play().catch(() => {});
-    }
-  }, [isVideoPlaying, selectedIndex, selectedProject]);
-
-  // Close modal on Escape
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleCloseModal(); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Safe fallbacks for translations
-  const tDemo = t.cube?.demo || "Demo Interactiva";
-  const tDragHint = t.cube?.dragHint || "Arrastra el elemento 3D o haz clic en una cara para ver los detalles del proyecto";
-  const tTech = t.cube?.technologies || "Tecnologías";
-  const tPrev = t.cube?.prev || "Anterior";
-  const tNext = t.cube?.next || "Siguiente";
-  const tStop = t.cube?.stop || "Detener";
-  const tViewProject = t.cube?.viewProject || "Ver Proyecto";
+  // Keyboard navigation for section
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isModalOpen) return;
+
+      const activeTag = document.activeElement?.tagName.toLowerCase();
+      if (activeTag === "input" || activeTag === "textarea") return;
+
+      if (e.key === "ArrowLeft") {
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handlePrev, handleNext, isModalOpen]);
+
+  const tBadge = t.projects?.showcase?.badge || "Portafolio de Ingeniería";
+  const tTitle1 = t.projects?.title1 || "PROYECTOS DESTACADOS Y";
+  const tTitle2 = t.projects?.title2 || "TRABAJO DE INGENIERÍA";
+  const tSubtitle =
+    t.projects?.subtitle ||
+    "Exploración interactiva de proyectos destacados en desarrollo móvil, plataformas web y sistemas empresariales.";
 
   return (
-    <div className="w-full mt-16">
-      {/* Section heading */}
-      <div className="text-center mb-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-400 mb-3">
-          {tDemo}
-        </p>
-        <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-          {t.projects.myProjects}
+    <div className={`w-full mt-16 ${prefersReducedMotion ? "motion-reduce" : ""}`}>
+      {/* Section Header */}
+      <div className="text-start mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-[0.25em] text-red-500 bg-red-500/10 border border-red-500/20 mb-3">
+          <span>{tBadge}</span>
+        </div>
+
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white flex flex-wrap gap-x-3 gap-y-1">
+          <span>{tTitle1}</span>
+          <span className="text-red-500">{tTitle2}</span>
         </h2>
-        <p className="mt-3 text-zinc-500 dark:text-zinc-400 text-sm max-w-md mx-auto">
-          {tDragHint}
+
+        <p className="mt-3 text-zinc-600 dark:text-zinc-400 text-sm md:text-base max-w-2xl leading-relaxed">
+          {tSubtitle}
         </p>
       </div>
 
-      {/* Cube + Navigation */}
-      <div className="relative flex flex-col items-center">
-        {/* Nav arrows */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex">
-          <button
-            onClick={handlePrev}
-            className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-white hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-200 shadow-md"
-            aria-label={tPrev}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-        </div>
+      {/* Discipline Category Filter Tabs */}
+      <ProjectFilters
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelectCategory={handleSelectCategory}
+      />
 
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex">
-          <button
-            onClick={handleNext}
-            className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-white hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-200 shadow-md"
-            aria-label={tNext}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        {/* 3D Carousel (Replacing Cube) */}
-        <div className="w-full max-w-[600px] px-4 md:px-14">
-          <ProjectCube
-            projects={projects}
+      {/* Main Interactive Editorial Showcase Stage */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-zinc-50/50 dark:bg-zinc-900/40 p-5 sm:p-8 md:p-10 rounded-3xl border border-zinc-200/80 dark:border-white/5 shadow-xl shadow-black/5">
+        {/* Left Column: Project Deck & Index */}
+        <div className="lg:col-span-5 w-full">
+          <ProjectDeck
+            project={currentProject}
+            currentIndex={currentIndex}
+            totalCount={filteredProjects.length}
+            onPrev={handlePrev}
+            onNext={handleNext}
+            onOpenDetails={handleOpenDetails}
+            projectsList={filteredProjects}
             onSelectProject={handleSelectProject}
-            selectedIndex={selectedIndex}
           />
         </div>
 
-        {/* Mobile nav arrows */}
-        <div className="flex gap-4 mt-4 md:hidden">
-          <button onClick={handlePrev} className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-white hover:bg-red-500 hover:text-white transition-all duration-200" aria-label={tPrev}>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => handleSelectProject(selectedIndex)}
-            className="flex items-center justify-center px-5 h-11 rounded-full bg-red-500 text-white text-sm font-semibold hover:bg-red-400 transition-all duration-200"
-          >
-            {tViewProject}
-          </button>
-          <button onClick={handleNext} className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-white hover:bg-red-500 hover:text-white transition-all duration-200" aria-label={tNext}>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Project dots indicator */}
-        <div className="flex gap-2 mt-6 flex-wrap justify-center max-w-[80%]">
-          {projects.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleSelectProject(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === selectedIndex
-                  ? "w-6 h-2 bg-red-500"
-                  : "w-2 h-2 bg-zinc-300 dark:bg-zinc-600 hover:bg-red-400"
-              }`}
-              aria-label={`Proyecto ${i + 1}`}
-            />
-          ))}
+        {/* Right Column: Cinematic Focus Stage */}
+        <div className="lg:col-span-7 w-full">
+          <ProjectSpotlightStage
+            project={currentProject}
+            onOpenDetails={handleOpenDetails}
+          />
         </div>
       </div>
 
-      {/* Modal de detalles del proyecto */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          onClick={handleCloseModal}
-        >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
-
-          {/* Modal card */}
-          <div
-            className="relative z-10 w-full max-w-2xl rounded-2xl overflow-hidden
-              bg-white dark:bg-zinc-900
-              border border-zinc-200 dark:border-white/10
-              shadow-2xl shadow-black/40
-              animate-[fadeInScale_0.25s_ease-out]"
-            onClick={(e) => e.stopPropagation()}
-            style={{ animation: "fadeInScale 0.25s ease-out both" }}
-          >
-            {/* Image / Video header */}
-            <div className="relative h-52 md:h-64 overflow-hidden">
-              {isVideoPlaying && selectedProject.video ? (
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  muted
-                  loop
-                  className="w-full h-full object-cover"
-                >
-                  <source src={selectedProject.video} />
-                </video>
-              ) : (
-                <img
-                  src={selectedProject.imageUrl}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover object-top"
-                />
-              )}
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Play button */}
-              {selectedProject.video && !isVideoPlaying && (
-                <button
-                  onClick={() => setIsVideoPlaying(true)}
-                  className="absolute inset-0 flex items-center justify-center group"
-                >
-                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur border border-white/30 group-hover:bg-red-500/80 group-hover:border-red-400 transition-all duration-300">
-                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </button>
-              )}
-
-              {/* Stop video */}
-              {isVideoPlaying && (
-                <button
-                  onClick={() => setIsVideoPlaying(false)}
-                  className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/50 backdrop-blur border border-white/20 text-white text-xs px-3 py-1.5 rounded-full hover:bg-red-500/70 transition-all"
-                >
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="6" y="4" width="4" height="16" rx="1" strokeWidth={2} />
-                    <rect x="14" y="4" width="4" height="16" rx="1" strokeWidth={2} />
-                  </svg>
-                  {tStop}
-                </button>
-              )}
-
-              {/* Close button */}
-              <button
-                onClick={handleCloseModal}
-                className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 backdrop-blur border border-white/20 text-white hover:bg-red-500 hover:border-red-400 transition-all duration-200"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* Title over image */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-white text-xl md:text-2xl font-bold drop-shadow-lg line-clamp-2">
-                  {selectedProject.title}
-                </h3>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 space-y-5">
-              {/* Description */}
-              <p className="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed">
-                {selectedProject.text}
-              </p>
-
-              {/* Technologies */}
-              <div>
-                <p className="text-xs uppercase tracking-widest text-red-500 font-semibold mb-2">{tTech}</p>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-medium px-3 py-1 rounded-full
-                        bg-zinc-100 dark:bg-zinc-800
-                        text-zinc-700 dark:text-zinc-300
-                        border border-zinc-200 dark:border-zinc-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Navigation between projects */}
-              <div className="flex items-center justify-between pt-2 border-t border-zinc-100 dark:border-zinc-800">
-                <button
-                  onClick={handlePrev}
-                  className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                  {tPrev}
-                </button>
-
-                <span className="text-xs text-zinc-400 dark:text-zinc-500">
-                  {selectedIndex + 1} / {projects.length}
-                </span>
-
-                <button
-                  onClick={handleNext}
-                  className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
-                >
-                  {tNext}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Accessible In-Depth Inspection Modal */}
+      <ProjectDetailModal
+        isOpen={isModalOpen}
+        project={currentProject}
+        currentIndex={currentIndex}
+        totalCount={filteredProjects.length}
+        onClose={handleCloseModal}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
     </div>
   );
 };

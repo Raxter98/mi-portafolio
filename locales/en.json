@@ -207,6 +207,30 @@
     "title1": "FEATURED PROJECTS &",
     "title2": "ENGINEERING WORK",
     "myProjects": "My Projects",
+    "subtitle": "Interactive exploration of featured engineering work across mobile development, web platforms, and enterprise systems.",
+    "showcase": {
+      "badge": "Engineering Showcase",
+      "categories": {
+        "all": "All Projects",
+        "mobile": "Mobile Apps",
+        "web": "Web Platforms",
+        "enterprise_pwa": "Enterprise & PWAs"
+      },
+      "actions": {
+        "viewDetails": "View Details",
+        "watchVideo": "Watch Demo",
+        "stopVideo": "Stop Video",
+        "closeModal": "Close",
+        "prevProject": "Previous Project",
+        "nextProject": "Next Project"
+      },
+      "meta": {
+        "technologies": "Technologies & Tools",
+        "overview": "Project Overview",
+        "projectNumber": "Project",
+        "of": "of"
+      }
+    },
     "items": {
       "arzobispado": {
         "title": "Website & CRUD Archbishopric of La Serena",

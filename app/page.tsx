@@ -215,7 +215,7 @@ export default function Home() {
 
       <div id="projects" />
 
-      {/* PROYECTOS (Interactive 3D Carousel) */}
+      {/* PROYECTOS (Interactive Editorial Showcase) */}
       <section className="w-full max-w-7xl px-5 md:px-10 mb-10">
         <MyProjects />
       </section>
