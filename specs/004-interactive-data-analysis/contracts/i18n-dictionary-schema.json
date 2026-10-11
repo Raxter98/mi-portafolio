@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DataAnalysisI18nSchema",
+  "type": "object",
+  "required": ["dataAnalysis", "dataDashboard"],
+  "properties": {
+    "dataAnalysis": {
+      "type": "object",
+      "required": ["badge", "title", "description", "cta", "videoFallbackAlt"],
+      "properties": {
+        "badge": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "cta": { "type": "string" },
+        "videoFallbackAlt": { "type": "string" }
+      }
+    },
+    "dataDashboard": {
+      "type": "object",
+      "required": [
+        "backButton",
+        "title",
+        "description",
+        "datasetSelector",
+        "common",
+        "ecommerce",
+        "hospital"
+      ],
+      "properties": {
+        "backButton": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "datasetSelector": {
+          "type": "object",
+          "required": ["label", "ecommerceTab", "hospitalTab"],
+          "properties": {
+            "label": { "type": "string" },
+            "ecommerceTab": { "type": "string" },
+            "hospitalTab": { "type": "string" }
+          }
+        },
+        "common": {
+          "type": "object",
+          "required": [
+            "resetFilters",
+            "filtersTitle",
+            "noResults",
+            "showingRecords",
+            "page",
+            "of",
+            "all"
+          ],
+          "properties": {
+            "resetFilters": { "type": "string" },
+            "filtersTitle": { "type": "string" },
+            "noResults": { "type": "string" },
+            "showingRecords": { "type": "string" },
+            "page": { "type": "string" },
+            "of": { "type": "string" },
+            "all": { "type": "string" }
+          }
+        },
+        "ecommerce": {
+          "type": "object",
+          "required": ["kpis", "charts", "filters", "table"],
+          "properties": {
+            "kpis": {
+              "type": "object",
+              "required": ["revenue", "profit", "margin", "units", "aov"],
+              "properties": {
+                "revenue": { "type": "string" },
+                "profit": { "type": "string" },
+                "margin": { "type": "string" },
+                "units": { "type": "string" },
+                "aov": { "type": "string" }
+              }
+            },
+            "charts": {
+              "type": "object",
+              "required": ["timelineTitle", "categoryTitle", "regionTitle", "shipModeTitle"],
+              "properties": {
+                "timelineTitle": { "type": "string" },
+                "categoryTitle": { "type": "string" },
+                "regionTitle": { "type": "string" },
+                "shipModeTitle": { "type": "string" }
+              }
+            },
+            "filters": {
+              "type": "object",
+              "required": ["category", "region", "shipMode", "year"],
+              "properties": {
+                "category": { "type": "string" },
+                "region": { "type": "string" },
+                "shipMode": { "type": "string" },
+                "year": { "type": "string" }
+              }
+            },
+            "table": {
+              "type": "object",
+              "required": [
+                "orderId",
+                "date",
+                "customer",
+                "region",
+                "product",
+                "category",
+                "qty",
+                "price",
+                "discount",
+                "revenue",
+                "profit",
+                "shipMode"
+              ]
+            }
+          }
+        },
+        "hospital": {
+          "type": "object",
+          "required": ["kpis", "charts", "filters", "table"],
+          "properties": {
+            "kpis": {
+              "type": "object",
+              "required": ["admissions", "los", "billing", "coverage", "outstanding"],
+              "properties": {
+                "admissions": { "type": "string" },
+                "los": { "type": "string" },
+                "billing": { "type": "string" },
+                "coverage": { "type": "string" },
+                "outstanding": { "type": "string" }
+              }
+            },
+            "charts": {
+              "type": "object",
+              "required": ["deptVolumeTitle", "billingDeptTitle", "demographicsTitle", "paymentStatusTitle"],
+              "properties": {
+                "deptVolumeTitle": { "type": "string" },
+                "billingDeptTitle": { "type": "string" },
+                "demographicsTitle": { "type": "string" },
+                "paymentStatusTitle": { "type": "string" }
+              }
+            },
+            "filters": {
+              "type": "object",
+              "required": ["department", "paymentStatus", "gender", "ageGroup"],
+              "properties": {
+                "department": { "type": "string" },
+                "paymentStatus": { "type": "string" },
+                "gender": { "type": "string" },
+                "ageGroup": { "type": "string" }
+              }
+            },
+            "table": {
+              "type": "object",
+              "required": [
+                "patientId",
+                "patientName",
+                "age",
+                "gender",
+                "admission",
+                "discharge",
+                "los",
+                "department",
+                "diagnosis",
+                "totalBill",
+                "coverage",
+                "status"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

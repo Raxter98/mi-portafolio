@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { useTranslation } from "../../hooks/useTranslation";
 import { Download, Github, Linkedin, Briefcase } from "lucide-react";
 
@@ -11,6 +10,7 @@ const Welcome = () => {
     "Full Stack",
     "Web & Mobile",
     "AI Workflows",
+    "Data Analyst",
   ];
   
   const [activeIndex, setActiveIndex] = useState(0);

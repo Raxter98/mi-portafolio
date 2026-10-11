@@ -5,6 +5,7 @@
     "software": "Software",
     "projects": "Projects",
     "multimedia": "AI & Multimedia",
+    "dataAnalysis": "Data",
     "skills": "Skills",
     "education": "Education",
     "contact": "Contact me"
@@ -14,7 +15,7 @@
     "myNameIs": "My name is ",
     "developer": "Multimedia Computer Engineer",
     "downloadCv": "Download CV ↴",
-    "speaking": ["Software Engineer", " Full Stack", " Web & Mobile", " AI Workflows"]
+    "speaking": ["Software Engineer", " Full Stack", " Web & Mobile", " AI Workflows", " Data Analyst"]
   },
   "subtitle": {
     "text": "As a Multimedia Computer Engineer with over four years of professional experience, I specialize in architecting, developing, and deploying scalable web systems, cross-platform mobile applications, and AI-assisted automation workflows. My engineering background enables me to bridge software architecture, process automation, and creative digital production to deliver high-performance solutions."
@@ -288,5 +289,101 @@
     "next": "Next",
     "stop": "Stop",
     "viewProject": "View Project"
+  },
+  "dataAnalysis": {
+    "badge": "Data Engineering",
+    "title": "Interactive Data Analysis & Visualization",
+    "description": "Explore diverse datasets through interactive dashboards, KPIs, and visualizations designed to transform raw data into clear, actionable intelligence.",
+    "cta": "Examples of my work",
+    "videoFallbackAlt": "Interactive data analysis preview"
+  },
+  "dataDashboard": {
+    "backButton": "Back to Portfolio",
+    "title": "Data Analysis & Visualization Hub",
+    "description": "Interactive explorer for commercial and clinical benchmarks featuring multidimensional filtering, real-time KPI recalculations, and record inspection.",
+    "datasetSelector": {
+      "label": "Active Dataset:",
+      "ecommerceTab": "Público e-commerce",
+      "hospitalTab": "Hospital-patients"
+    },
+    "common": {
+      "resetFilters": "Reset Filters",
+      "filtersTitle": "Exploration Filters",
+      "noResults": "No records found matching the selected filter criteria.",
+      "showingRecords": "Showing",
+      "page": "Page",
+      "of": "of",
+      "all": "All"
+    },
+    "ecommerce": {
+      "kpis": {
+        "revenue": "Total Revenue",
+        "profit": "Total Profit",
+        "margin": "Profit Margin",
+        "units": "Units Sold",
+        "aov": "Average Order Value (AOV)"
+      },
+      "charts": {
+        "timelineTitle": "Monthly Sales & Profit Timeline (2024-2025)",
+        "categoryTitle": "Sales & Performance by Product Category",
+        "regionTitle": "Regional Sales Distribution",
+        "shipModeTitle": "Shipping Mode Distribution"
+      },
+      "filters": {
+        "category": "Category",
+        "region": "Region",
+        "shipMode": "Ship Mode",
+        "year": "Year"
+      },
+      "table": {
+        "orderId": "Order ID",
+        "date": "Date",
+        "customer": "Customer",
+        "region": "Region",
+        "product": "Product",
+        "category": "Category",
+        "qty": "Qty",
+        "price": "Unit Price",
+        "discount": "Discount",
+        "revenue": "Total",
+        "profit": "Profit",
+        "shipMode": "Ship Mode"
+      }
+    },
+    "hospital": {
+      "kpis": {
+        "admissions": "Total Admissions",
+        "los": "Avg Length of Stay (LOS)",
+        "billing": "Total Hospital Billing",
+        "coverage": "Avg Insurance Coverage",
+        "outstanding": "Outstanding Balance"
+      },
+      "charts": {
+        "deptVolumeTitle": "Patient Volume & Avg Stay by Department",
+        "billingDeptTitle": "Department Billing vs Coverage Breakdown",
+        "demographicsTitle": "Age Demographic Distribution",
+        "paymentStatusTitle": "Invoice Settlement Status"
+      },
+      "filters": {
+        "department": "Department",
+        "paymentStatus": "Payment Status",
+        "gender": "Gender",
+        "ageGroup": "Age Group"
+      },
+      "table": {
+        "patientId": "Patient ID",
+        "patientName": "Patient Name",
+        "age": "Age",
+        "gender": "Gender",
+        "admission": "Admission",
+        "discharge": "Discharge",
+        "los": "Stay (Days)",
+        "department": "Department",
+        "diagnosis": "Diagnosis",
+        "totalBill": "Total Bill",
+        "coverage": "Coverage",
+        "status": "Status"
+      }
+    }
   }
 }

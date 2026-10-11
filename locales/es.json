@@ -5,6 +5,7 @@
     "software": "Software",
     "projects": "Proyectos",
     "multimedia": "IA y Multimedia",
+    "dataAnalysis": "Datos",
     "skills": "Habilidades",
     "education": "Educación",
     "contact": "Contáctame"
@@ -14,7 +15,7 @@
     "myNameIs": "Mi nombre es ",
     "developer": "Ingeniero Informático Multimedia",
     "downloadCv": "Descargar CV ↴",
-    "speaking": ["Ingeniero Software", " Full Stack", " Web y Móvil", " Flujos IA"]
+    "speaking": ["Ingeniero Software", " Full Stack", " Web y Móvil", " Flujos IA", " Analista de Datos"]
   },
   "subtitle": {
     "text": "Como Ingeniero Informático Multimedia con más de cuatro años de experiencia profesional, me especializo en el diseño, desarrollo y despliegue de sistemas web escalables, aplicaciones móviles multiplataforma y flujos de automatización asistidos por IA. Mi formación me permite integrar arquitectura de software, automatización de procesos y producción digital para ofrecer soluciones de alto rendimiento."
@@ -288,5 +289,101 @@
     "next": "Siguiente",
     "stop": "Detener",
     "viewProject": "Ver Proyecto"
+  },
+  "dataAnalysis": {
+    "badge": "Ingeniería de Datos",
+    "title": "Análisis y visualización de datos",
+    "description": "Explora conjuntos de datos mediante dashboards interactivos, indicadores y visualizaciones diseñadas para convertir datos en información comprensible.",
+    "cta": "Ejemplos de mi trabajo",
+    "videoFallbackAlt": "Vista previa interactiva de análisis de datos"
+  },
+  "dataDashboard": {
+    "backButton": "Volver al portafolio",
+    "title": "Centro de Análisis y Visualización de Datos",
+    "description": "Explorador interactivo de métricas empresariales y clínicas con filtrado multidimensional, recálculo en tiempo real e inspección de registros.",
+    "datasetSelector": {
+      "label": "Conjunto de datos activo:",
+      "ecommerceTab": "Público e-commerce",
+      "hospitalTab": "Hospital-patients"
+    },
+    "common": {
+      "resetFilters": "Limpiar filtros",
+      "filtersTitle": "Filtros de exploración",
+      "noResults": "No se encontraron registros que coincidan con los filtros seleccionados.",
+      "showingRecords": "Mostrando",
+      "page": "Página",
+      "of": "de",
+      "all": "Todos"
+    },
+    "ecommerce": {
+      "kpis": {
+        "revenue": "Ingresos Totales",
+        "profit": "Beneficio Neto",
+        "margin": "Margen de Beneficio",
+        "units": "Unidades Vendidas",
+        "aov": "Ticket Promedio (AOV)"
+      },
+      "charts": {
+        "timelineTitle": "Evolución Mensual: Ingresos vs Beneficios (2024-2025)",
+        "categoryTitle": "Ventas y Rendimiento por Categoría",
+        "regionTitle": "Distribución de Ventas por Región",
+        "shipModeTitle": "Modos de Envío Seleccionados"
+      },
+      "filters": {
+        "category": "Categoría",
+        "region": "Región",
+        "shipMode": "Modo de Envío",
+        "year": "Año"
+      },
+      "table": {
+        "orderId": "ID Pedido",
+        "date": "Fecha",
+        "customer": "Cliente",
+        "region": "Región",
+        "product": "Producto",
+        "category": "Categoría",
+        "qty": "Cant.",
+        "price": "Precio Unit.",
+        "discount": "Desc.",
+        "revenue": "Total",
+        "profit": "Beneficio",
+        "shipMode": "Envío"
+      }
+    },
+    "hospital": {
+      "kpis": {
+        "admissions": "Admisiones Totales",
+        "los": "Estancia Promedio (LOS)",
+        "billing": "Facturación Hospitalaria",
+        "coverage": "Cobertura Aseguradora Prom.",
+        "outstanding": "Saldo Pendiente / Parcial"
+      },
+      "charts": {
+        "deptVolumeTitle": "Pacientes y Estancia Promedio por Departamento",
+        "billingDeptTitle": "Facturación y Cobertura por Departamento",
+        "demographicsTitle": "Distribución Demográfica por Edad",
+        "paymentStatusTitle": "Estado de Liquidación de Facturas"
+      },
+      "filters": {
+        "department": "Departamento",
+        "paymentStatus": "Estado de Pago",
+        "gender": "Género",
+        "ageGroup": "Grupo de Edad"
+      },
+      "table": {
+        "patientId": "ID Paciente",
+        "patientName": "Nombre Paciente",
+        "age": "Edad",
+        "gender": "Género",
+        "admission": "Admisión",
+        "discharge": "Alta",
+        "los": "Días (LOS)",
+        "department": "Especialidad",
+        "diagnosis": "Diagnóstico",
+        "totalBill": "Factura Total",
+        "coverage": "Cobertura",
+        "status": "Estado"
+      }
+    }
   }
 }

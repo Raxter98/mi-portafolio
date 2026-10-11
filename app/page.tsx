@@ -63,6 +63,10 @@ const MultimediaSection = dynamic(() => import("@/components/multimedia/page"), 
   ssr: false,
 });
 
+const DataAnalysisSection = dynamic(() => import("@/components/dataAnalysis/page"), {
+  ssr: false,
+});
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -216,8 +220,13 @@ export default function Home() {
         <MyProjects />
       </section>
 
+      {/* DATA ANALYSIS & VISUALIZATION SHOWCASE SECTION */}
+      <DataAnalysisSection />
+
       {/* AI & MULTIMEDIA SHOWCASE SECTION */}
       <MultimediaSection />
+
+      
 
       <div id="skills" />
 

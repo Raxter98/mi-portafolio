@@ -37,6 +37,7 @@ export default function Navbar() {
     { name: t.nav.software, id: "software" },
     { name: t.nav.projects, id: "projects" },
     { name: t.nav.multimedia, id: "multimedia" },
+    { name: t.nav.dataAnalysis, id: "data-analysis" },
     { name: t.nav.skills, id: "skills" },
     { name: t.nav.education, id: "education" },
     { name: t.nav.contact, id: "contact" },
