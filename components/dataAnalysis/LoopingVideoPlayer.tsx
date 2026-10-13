@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { BarChart3, Play, Pause } from "lucide-react";
 
 interface LoopingVideoPlayerProps {
@@ -8,20 +9,41 @@ interface LoopingVideoPlayerProps {
   poster?: string;
   alt?: string;
   className?: string;
+  href?: string;
+  showControls?: boolean;
 }
 
 export default function LoopingVideoPlayer({
   src = "/videos/data-preview.mp4",
-  poster = "/projects/data-preview-poster.webp",
+  poster,
   alt = "Interactive data visualization preview",
   className = "",
+  href,
+  showControls = false,
 }: LoopingVideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  // Normalize src in case "public/..." or "/public/..." was provided
+  const cleanSrc = src
+    ? src.startsWith("public/")
+      ? `/${src.slice(7)}`
+      : src.startsWith("/public/")
+      ? src.slice(7)
+      : src
+    : "/videos/data-preview.mp4";
+
   const [hasError, setHasError] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Ensure DOM element has muted and defaultMuted set for browser autoplay policies
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+    }
+  }, []);
 
   // Check for reduced motion
   useEffect(() => {
@@ -65,9 +87,13 @@ export default function LoopingVideoPlayer({
 
     observer.observe(container);
     return () => observer.disconnect();
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, cleanSrc]);
 
-  const togglePlay = () => {
+  const togglePlay = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const video = videoRef.current;
     if (!video) return;
 
@@ -84,18 +110,28 @@ export default function LoopingVideoPlayer({
       ref={containerRef}
       className={`relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-900 shadow-2xl shadow-black/20 ${className}`}
     >
+      {/* Optional clickable overlay link to dashboard without invalid nesting */}
+      {href && (
+        <Link
+          href={href}
+          className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-2xl"
+          aria-label={alt}
+        />
+      )}
+
       {/* Decorative gradient overlay border */}
       <div className="absolute inset-0 z-10 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/10" />
 
       {!hasError ? (
         <video
           ref={videoRef}
-          src={src}
+          src={cleanSrc}
           poster={poster}
           autoPlay={!prefersReducedMotion}
           loop
           muted
           playsInline
+          preload="auto"
           onError={() => setHasError(true)}
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
           aria-label={alt}
@@ -126,9 +162,10 @@ export default function LoopingVideoPlayer({
         </div>
       )}
 
-      {/* Manual play/pause control button */}
-      {!hasError && (
+      {/* Manual play/pause control button (hidden by default) */}
+      {!hasError && showControls && (
         <button
+          type="button"
           onClick={togglePlay}
           className="absolute bottom-3 right-3 z-20 p-2.5 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-white/10 text-white backdrop-blur transition-all focus:outline-none focus:ring-2 focus:ring-red-500"
           aria-label={isPlaying ? "Pausar animación" : "Reproducir animación"}

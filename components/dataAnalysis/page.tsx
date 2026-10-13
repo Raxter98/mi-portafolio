@@ -68,14 +68,14 @@ export default function DataAnalysisSection() {
             {/* Ambient accent card background border */}
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-500/20 via-zinc-500/10 to-red-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-500 -z-10" />
 
-            <Link href="/data-analysis" className="block focus:outline-none focus:ring-2 focus:ring-red-500 rounded-2xl">
+            <div className="rounded-2xl">
               <LoopingVideoPlayer
                 src="/videos/data-preview.mp4"
-                poster="/projects/data-preview-poster.webp"
+                href="/data-analysis"
                 alt={t.dataAnalysis.videoFallbackAlt}
                 className="w-full aspect-[16/10]"
               />
-            </Link>
+            </div>
           </div>
         </div>
       </div>
